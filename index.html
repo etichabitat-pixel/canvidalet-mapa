@@ -58,8 +58,9 @@ if(SECC){
   try{map.fitBounds(secc.getBounds().pad(0.05));}catch(e){}
 }
 let markers={}, active={A:true,B:true,C:true};
+const CO2={"A.UR.3.1": "−36,1 t/any", "A.UR.6.2": "impacte indirecte", "A.UR.3.3": "impacte indirecte", "A.UR.4.4": "−38,7 t/any", "A.EE.13.5": "−21,8 t/any", "A.EE.13.6": "−25,8 t/any", "B.CC.18.7": "−6,0 t/any (verd nou, conjunt)", "B.CC.18.8": "impacte indirecte", "B.CC.18.9": "−6,0 t/any (verd nou, conjunt)", "B.CC.19.10": "−6,0 t/any", "B.IV.23.11": "−6,0 t/any (verd nou, conjunt)", "B.EC.29.12": "−3,6 t/any", "C.RD.31.13": "−1,9 t/any", "C.RD.32.14": "−1,9 t/any", "C.RD.35.15": "−1,9 t/any", "C.EG.36.16": "−1,9 t/any", "C.EG.38.17": "−1,9 t/any", "C.SE.41.18": "−1,9 t/any", "C.SE.42.19": "−1,9 t/any", "C.SE.44.20": "−1,9 t/any", "C.ED.47.21": "−1,9 t/any", "C.ED.47.22": "−1,9 t/any", "C.ET.51.23": "−1,9 t/any"};
 function popup(p){return `<b>${p.codi} · ${p.nom}</b><br><span class="badge" style="background:${p.color}">${p.ambit_nom}</span> · ${p.subambit}<br>`+
-  `<b>Pressupost:</b> ${p.pressupost_txt}<br><b>Tipus:</b> ${p.tipus}<br><span style="color:#7C8493">${p.emplacament}</span>`+
+  `<b>Pressupost:</b> ${p.pressupost_txt}<br><b>Tipus:</b> ${p.tipus}<br><b>Reducció CO₂:</b> ${CO2[p.codi]||'—'}<br><span style="color:#7C8493">${p.emplacament}</span>`+
   `<br><a href="fitxa_${p.codi}.html" target="_blank" rel="noopener" style="display:inline-block;margin-top:9px;background:${p.color};color:#fff;padding:7px 13px;border-radius:8px;text-decoration:none;font-weight:700;font-size:12px">Veure fitxa completa &rarr;</a>`;}
 DATA.features.forEach(f=>{
   const p=f.properties,c=f.geometry.coordinates;
