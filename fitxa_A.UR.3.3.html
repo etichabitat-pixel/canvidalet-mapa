@@ -1,0 +1,82 @@
+<!DOCTYPE html><html lang="ca"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A.UR.3.3 · Adequació dels locals del carrer Cedres per a serveis i entitats socials — Fitxa PMII Can Vidalet</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Fraunces:ital@0;1&family=Inter:wght@400;500;600;700&display=swap');
+:root{--verd:#1F8A60;--verdf:#15694A;--coral:#EF6F4C;--grafit:#1E2A3A;--sorra:#F6F1E7;--groc:#F4C84A;--gris:#7C8493;--amb:#1F8A60}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,Arial,sans-serif;color:var(--grafit);background:var(--sorra);line-height:1.55}
+.wrap{max-width:900px;margin:0 auto;padding:0 18px 60px}
+.top{background:var(--grafit);color:#fff;padding:22px 0}
+.top .wrap{padding-bottom:0}
+.back{color:#C7CFDA;text-decoration:none;font-size:13px;font-weight:600}
+.back:hover{color:#fff}
+.head{display:flex;gap:14px;align-items:flex-start;margin-top:14px}
+.num{background:var(--amb);color:#fff;font-family:'Bricolage Grotesque';font-weight:800;font-size:20px;width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex:none}
+.badge{display:inline-block;background:var(--amb);color:#fff;font-weight:700;font-size:11px;padding:3px 10px;border-radius:20px;letter-spacing:.03em}
+h1{font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(1.4rem,3.4vw,2.1rem);line-height:1.12;margin-top:8px;color:#fff}
+.amb{color:#C7CFDA;font-size:13px;margin-top:6px}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:-28px}
+.kpi{background:#fff;border-radius:14px;padding:16px;box-shadow:0 12px 30px -20px rgba(30,42,58,.4);border-top:4px solid var(--amb)}
+.kpi .l{font-size:11px;color:var(--gris);font-weight:600;text-transform:uppercase;letter-spacing:.05em}
+.kpi .v{font-family:'Bricolage Grotesque';font-weight:800;font-size:1.25rem;margin-top:4px}
+.card{background:#fff;border-radius:16px;padding:24px;margin-top:18px;box-shadow:0 12px 30px -24px rgba(30,42,58,.35)}
+h2{font-family:'Bricolage Grotesque';font-weight:800;font-size:1.15rem;color:var(--verdf);margin-bottom:10px;padding-left:12px;border-left:5px solid var(--amb)}
+p.lead{font-size:1.02rem;color:#41506a}
+table{width:100%;border-collapse:collapse;margin-top:8px;font-size:.92rem}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid #eee}
+th{background:var(--grafit);color:#fff;font-family:'Bricolage Grotesque';font-weight:700;font-size:.82rem}
+td.r,th.r{text-align:right}
+tr:nth-child(even) td{background:rgba(31,138,96,.05)}
+.fin{display:flex;gap:0;border-radius:12px;overflow:hidden;margin-top:10px;font-size:.85rem;font-weight:700;color:#fff}
+.fin .g{background:var(--verd);padding:12px} .fin .m{background:var(--grafit);padding:12px}
+#map{height:340px;border-radius:14px;margin-top:8px;border:1px solid #e3ddd0}
+.foot{margin-top:26px;color:var(--gris);font-size:12px;text-align:center}
+.pill{display:inline-block;background:rgba(31,138,96,.1);color:var(--verdf);font-weight:600;font-size:12px;padding:4px 10px;border-radius:20px;margin:2px}
+</style></head><body>
+<div class="top"><div class="wrap">
+<a class="back" href="index.html">← Torna al mapa global de les 23 actuacions</a>
+<div class="head"><div class="num">3</div><div>
+<span class="badge">A.UR.3.3</span>
+<h1>Adequació dels locals del carrer Cedres per a serveis i entitats socials</h1>
+<div class="amb">Àmbit A · Transició ecològica i espai urbà · Urbanisme · Puntual</div>
+</div></div>
+</div></div>
+<div class="wrap">
+<div class="kpis">
+<div class="kpi"><div class="l">Pressupost total</div><div class="v">608.444 €</div></div>
+<div class="kpi"><div class="l">Finançament Generalitat</div><div class="v">365.067 €</div></div>
+<div class="kpi"><div class="l">Aportació municipal</div><div class="v">243.378 €</div></div>
+<div class="kpi"><div class="l">Naturalesa</div><div class="v">Capital</div></div>
+</div>
+
+<div class="card"><h2>Descripció i abast territorial</h2>
+<p class="lead">Actuació de l'àmbit a · transició ecològica i espai urbà, dins l'àmbit temàtic de Urbanisme. Adequació dels locals del carrer Cedres per a serveis i entitats socials. Emplaçament: Locals del carrer dels Cedres.</p>
+<div style="margin-top:12px"><span class="pill">Àmbit temàtic: Urbanisme</span> <span class="pill">Localització: Locals del carrer dels Cedres</span> <span class="pill">Tipus: Puntual</span></div>
+</div>
+
+<div class="card"><h2>Finançament (model 60/40)</h2>
+<div class="fin"><div class="g" style="flex:60">Generalitat · 60% · 365.067 €</div><div class="m" style="flex:40">Ajuntament · 40% · 243.378 €</div></div>
+</div>
+
+<div class="card"><h2>Calendari d'execució</h2>
+<table><thead><tr><th>Any</th><th class="r">Inversió prevista</th></tr></thead><tbody><tr><td>2027</td><td class='r'>31.774 €</td></tr><tr><td>2028</td><td class='r'>576.671 €</td></tr></tbody>
+<tfoot><tr><th>Total</th><th class="r">608.444 €</th></tr></tfoot></table>
+</div>
+
+<div class="card"><h2>Persones destinatàries</h2>
+<p class="lead">Entitats i teixit associatiu del barri de Can Vidalet, com a usuàries directes dels locals. De manera indirecta, tota la població del barri beneficiària de l&#x27;activitat comunitària, social i cultural que s&#x27;hi acollirà.</p></div>
+
+<div class="card"><h2>Indicadors de seguiment</h2><table><thead><tr><th>Tipus</th><th>Indicador</th><th class="r">Fita</th></tr></thead><tbody><tr><td>d&#x27;activitat o procés</td><td>Redacció i aprovació del projecte tècnic d&#x27;adequació</td><td class='r'>100%</td></tr><tr><td>d&#x27;execució</td><td>Percentatge de superfície rehabilitada respecte del total</td><td class='r'>100%</td></tr><tr><td>d&#x27;execució</td><td>Grau d&#x27;execució pressupostària respecte del total</td><td class='r'>100%</td></tr><tr><td>de producte (output)</td><td>Nombre de locals habilitats per a ús d&#x27;entitats</td><td class='r'>3</td></tr><tr><td>de producte (output)</td><td>Nombre de m² rehabilitats</td><td class='r'>395 m²</td></tr><tr><td>de producte (output)</td><td>Instal·lacions renovades i adaptades a normativa</td><td class='r'>100%</td></tr><tr><td>de resultat (outcome)</td><td>Percentatge d&#x27;activitats comunitàries acollides respecte de la demanda</td><td class='r'>≥ 50%</td></tr><tr><td>d&#x27;impacte</td><td>Increment de la participació veïnal en entitats</td><td class='r'>≥ 50%</td></tr><tr><td>d&#x27;impacte</td><td>Millora de la percepció de cohesió i vida comunitària al barri</td><td class='r'>≥ 80%</td></tr><tr><td>d&#x27;impacte</td><td>Posicionament dels locals com a referent d&#x27;usos socials i culturals del barri</td><td class='r'>10</td></tr></tbody></table></div>
+
+<div class="card"><h2>Ubicació al barri</h2>
+<div id="map"></div></div>
+
+<div class="foot">PMII Can Vidalet · Construïm benestar · Pla de Barris i Viles 2026 · Ajuntament d'Esplugues de Llobregat<br>Localització indicativa · Base cartogràfica © OpenStreetMap</div>
+</div>
+<script>
+const m=L.map('map',{scrollWheelZoom:false}).setView([41.3736,2.099],17);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'© OpenStreetMap'}).addTo(m);
+L.circleMarker([41.3736,2.099],{radius:12,fillColor:'#1F8A60',color:'#fff',weight:3,fillOpacity:.95}).addTo(m).bindPopup('A.UR.3.3 · Adequació dels locals del carrer Cedres per a serveis i entitats socials');
+</script></body></html>

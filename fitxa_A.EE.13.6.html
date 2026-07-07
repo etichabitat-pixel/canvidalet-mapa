@@ -1,0 +1,82 @@
+<!DOCTYPE html><html lang="ca"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A.EE.13.6 · Aprofitament de la generació d&#x27;energia renovable mitjançant l&#x27;emmagatzematge amb bateries — Fitxa PMII Can Vidalet</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Fraunces:ital@0;1&family=Inter:wght@400;500;600;700&display=swap');
+:root{--verd:#1F8A60;--verdf:#15694A;--coral:#EF6F4C;--grafit:#1E2A3A;--sorra:#F6F1E7;--groc:#F4C84A;--gris:#7C8493;--amb:#1F8A60}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,Arial,sans-serif;color:var(--grafit);background:var(--sorra);line-height:1.55}
+.wrap{max-width:900px;margin:0 auto;padding:0 18px 60px}
+.top{background:var(--grafit);color:#fff;padding:22px 0}
+.top .wrap{padding-bottom:0}
+.back{color:#C7CFDA;text-decoration:none;font-size:13px;font-weight:600}
+.back:hover{color:#fff}
+.head{display:flex;gap:14px;align-items:flex-start;margin-top:14px}
+.num{background:var(--amb);color:#fff;font-family:'Bricolage Grotesque';font-weight:800;font-size:20px;width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex:none}
+.badge{display:inline-block;background:var(--amb);color:#fff;font-weight:700;font-size:11px;padding:3px 10px;border-radius:20px;letter-spacing:.03em}
+h1{font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(1.4rem,3.4vw,2.1rem);line-height:1.12;margin-top:8px;color:#fff}
+.amb{color:#C7CFDA;font-size:13px;margin-top:6px}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:-28px}
+.kpi{background:#fff;border-radius:14px;padding:16px;box-shadow:0 12px 30px -20px rgba(30,42,58,.4);border-top:4px solid var(--amb)}
+.kpi .l{font-size:11px;color:var(--gris);font-weight:600;text-transform:uppercase;letter-spacing:.05em}
+.kpi .v{font-family:'Bricolage Grotesque';font-weight:800;font-size:1.25rem;margin-top:4px}
+.card{background:#fff;border-radius:16px;padding:24px;margin-top:18px;box-shadow:0 12px 30px -24px rgba(30,42,58,.35)}
+h2{font-family:'Bricolage Grotesque';font-weight:800;font-size:1.15rem;color:var(--verdf);margin-bottom:10px;padding-left:12px;border-left:5px solid var(--amb)}
+p.lead{font-size:1.02rem;color:#41506a}
+table{width:100%;border-collapse:collapse;margin-top:8px;font-size:.92rem}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid #eee}
+th{background:var(--grafit);color:#fff;font-family:'Bricolage Grotesque';font-weight:700;font-size:.82rem}
+td.r,th.r{text-align:right}
+tr:nth-child(even) td{background:rgba(31,138,96,.05)}
+.fin{display:flex;gap:0;border-radius:12px;overflow:hidden;margin-top:10px;font-size:.85rem;font-weight:700;color:#fff}
+.fin .g{background:var(--verd);padding:12px} .fin .m{background:var(--grafit);padding:12px}
+#map{height:340px;border-radius:14px;margin-top:8px;border:1px solid #e3ddd0}
+.foot{margin-top:26px;color:var(--gris);font-size:12px;text-align:center}
+.pill{display:inline-block;background:rgba(31,138,96,.1);color:var(--verdf);font-weight:600;font-size:12px;padding:4px 10px;border-radius:20px;margin:2px}
+</style></head><body>
+<div class="top"><div class="wrap">
+<a class="back" href="index.html">← Torna al mapa global de les 23 actuacions</a>
+<div class="head"><div class="num">6</div><div>
+<span class="badge">A.EE.13.6</span>
+<h1>Aprofitament de la generació d&#x27;energia renovable mitjançant l&#x27;emmagatzematge amb bateries</h1>
+<div class="amb">Àmbit A · Transició ecològica i espai urbà · Eficiència energètica · Abast de barri</div>
+</div></div>
+</div></div>
+<div class="wrap">
+<div class="kpis">
+<div class="kpi"><div class="l">Pressupost total</div><div class="v">900.000 €</div></div>
+<div class="kpi"><div class="l">Finançament Generalitat</div><div class="v">540.000 €</div></div>
+<div class="kpi"><div class="l">Aportació municipal</div><div class="v">360.000 €</div></div>
+<div class="kpi"><div class="l">Naturalesa</div><div class="v">Capital</div></div>
+</div>
+
+<div class="card"><h2>Descripció i abast territorial</h2>
+<p class="lead">Actuació de l'àmbit a · transició ecològica i espai urbà, dins l'àmbit temàtic de Eficiència energètica. Aprofitament de la generació d&#x27;energia renovable mitjançant l&#x27;emmagatzematge amb bateries. Emplaçament: 6 equipaments (Cadí, Mercat, CSE, 3 escoles).</p>
+<div style="margin-top:12px"><span class="pill">Àmbit temàtic: Eficiència energètica</span> <span class="pill">Localització: 6 equipaments (Cadí, Mercat, CSE, 3 escoles)</span> <span class="pill">Tipus: Abast de barri</span></div>
+</div>
+
+<div class="card"><h2>Finançament (model 60/40)</h2>
+<div class="fin"><div class="g" style="flex:60">Generalitat · 60% · 540.000 €</div><div class="m" style="flex:40">Ajuntament · 40% · 360.000 €</div></div>
+</div>
+
+<div class="card"><h2>Calendari d'execució</h2>
+<table><thead><tr><th>Any</th><th class="r">Inversió prevista</th></tr></thead><tbody><tr><td>2027</td><td class='r'>50.000 €</td></tr><tr><td>2028</td><td class='r'>300.000 €</td></tr><tr><td>2029</td><td class='r'>200.000 €</td></tr><tr><td>2030</td><td class='r'>350.000 €</td></tr></tbody>
+<tfoot><tr><th>Total</th><th class="r">900.000 €</th></tr></tfoot></table>
+</div>
+
+<div class="card"><h2>Persones destinatàries</h2>
+<p class="lead">Tota la ciutadania del barri com a beneficiària final de l&#x27;estalvi i la resiliència energètica municipal. De manera directa, l&#x27;alumnat, el professorat i el personal de les escoles públiques i del centre esportiu, i les famílies vulnerables susceptibles de beneficiar-se de la futura comunitat energèt</p></div>
+
+<div class="card"><h2>Indicadors de seguiment</h2><table><thead><tr><th>Tipus</th><th>Indicador</th><th class="r">Fita</th></tr></thead><tbody><tr><td>d&#x27;activitat o procés</td><td>Redacció del projecte executiu d&#x27;acord amb la planificació</td><td class='r'>100%</td></tr><tr><td>d&#x27;execució</td><td>Volum d&#x27;execució del pressupost previst respecte del total</td><td class='r'>100%</td></tr><tr><td>de producte (output)</td><td>Instal·lacions d&#x27;emmagatzematge objecte d&#x27;execució finalitzades</td><td class='r'>6</td></tr><tr><td>de resultat (outcome)</td><td>Instal·lacions objecte d&#x27;execució posades en funcionament</td><td class='r'>6</td></tr><tr><td>de resultat (outcome)</td><td>Instal·lacions objecte d&#x27;execució legalitzades</td><td class='r'>6</td></tr><tr><td>de resultat (outcome)</td><td>Increment de la taxa d&#x27;autoconsum de l&#x27;energia solar generada als equipaments</td><td class='r'>50%</td></tr><tr><td>d&#x27;impacte</td><td>Estalvi econòmic en la factura elèctrica municipal dels equipaments</td><td class='r'>&gt; 20%</td></tr></tbody></table></div>
+
+<div class="card"><h2>Ubicació al barri</h2>
+<div id="map"></div></div>
+
+<div class="foot">PMII Can Vidalet · Construïm benestar · Pla de Barris i Viles 2026 · Ajuntament d'Esplugues de Llobregat<br>Localització indicativa · Base cartogràfica © OpenStreetMap</div>
+</div>
+<script>
+const m=L.map('map',{scrollWheelZoom:false}).setView([41.375,2.098],17);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'© OpenStreetMap'}).addTo(m);
+L.circleMarker([41.375,2.098],{radius:12,fillColor:'#1F8A60',color:'#fff',weight:3,fillOpacity:.95}).addTo(m).bindPopup('A.EE.13.6 · Aprofitament de la generació d&#x27;energia renovable mitjançant l&#x27;emmagatzematge amb bateries');
+</script></body></html>
