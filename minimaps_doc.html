@@ -1,0 +1,195 @@
+<!DOCTYPE html><html lang="ca"><head><meta charset="utf-8">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Inter:wght@400;600;700&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,Arial,sans-serif;color:#1E2A3A;background:#fff;width:680px}
+.card{width:680px;height:725px;background:#fff;overflow:hidden}
+.ch{height:96px;padding:14px 18px 0;display:flex;gap:12px;align-items:flex-start}
+.num{color:#fff;font-family:'Bricolage Grotesque';font-weight:800;font-size:20px;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex:none}
+.cbadge{font-weight:700;font-size:15px}
+.cn{font-size:17px;font-weight:600;line-height:1.2;margin-top:2px}
+.mini{height:519px}
+.cf{height:110px;padding:12px 18px}
+.cf .row{display:flex;justify-content:space-between;align-items:center;font-size:15px}
+.bud{font-family:'Bricolage Grotesque';font-weight:800}
+.empl{color:#7C8493;font-size:13px;margin-top:6px;line-height:1.35}
+.pin{color:#fff;font-family:'Bricolage Grotesque';font-weight:800;border:2px solid #fff;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 1px 4px rgba(0,0,0,.4)}
+.leaflet-container{background:#e7e3d9}
+</style></head><body>
+<div class="card">
+<div class="ch"><span class="num" style="background:#1F8A60">1</span>
+<div class="ht"><span class="cbadge" style="color:#1F8A60">A.UR.3.1</span><div class="cn">HUB del Benestar</div></div></div>
+<div id="m0" class="mini"></div>
+<div class="cf"><div class="row"><span style="color:#1F8A60;font-weight:700">Transformacions físiques</span><span class="bud">10.569.526 €</span></div>
+<div class="empl">HUB del Benestar (nou equip., vora Parc)</div></div></div>
+<div class="card">
+<div class="ch"><span class="num" style="background:#1F8A60">2</span>
+<div class="ht"><span class="cbadge" style="color:#1F8A60">A.UR.6.2</span><div class="cn">Mercat municipal: espai d&#x27;oportunitats</div></div></div>
+<div id="m1" class="mini"></div>
+<div class="cf"><div class="row"><span style="color:#1F8A60;font-weight:700">Transformacions físiques</span><span class="bud">500.000 €</span></div>
+<div class="empl">Edifici Molí (Servei d&#x27;Ocupació); Mercat Municipal de Can Vidalet</div></div></div>
+<div class="card">
+<div class="ch"><span class="num" style="background:#1F8A60">3</span>
+<div class="ht"><span class="cbadge" style="color:#1F8A60">A.UR.3.3</span><div class="cn">Locals del carrer Cedres</div></div></div>
+<div id="m2" class="mini"></div>
+<div class="cf"><div class="row"><span style="color:#1F8A60;font-weight:700">Transformacions físiques</span><span class="bud">608.444 €</span></div>
+<div class="empl">Locals/Serveis Socials c. dels Cedres</div></div></div>
+<div class="card">
+<div class="ch"><span class="num" style="background:#1F8A60">4</span>
+<div class="ht"><span class="cbadge" style="color:#1F8A60">A.EE.15.4</span><div class="cn">Enllumenat públic LED</div></div></div>
+<div id="m3" class="mini"></div>
+<div class="cf"><div class="row"><span style="color:#1F8A60;font-weight:700">Transformacions físiques</span><span class="bud">803.000 €</span></div>
+<div class="empl">c. Molí × pl. Macael; c. Verge de la Mercè × c. Serra del Cadí; pl. Jacint Benavent × c. Magnòlies</div></div></div>
+<div class="card">
+<div class="ch"><span class="num" style="background:#1F8A60">5</span>
+<div class="ht"><span class="cbadge" style="color:#1F8A60">A.EE.13.5</span><div class="cn">Rehabilitació tèrmica d&#x27;escoles</div></div></div>
+<div id="m4" class="mini"></div>
+<div class="cf"><div class="row"><span style="color:#1F8A60;font-weight:700">Transformacions físiques</span><span class="bud">1.503.000 €</span></div>
+<div class="empl">Escola Can Vidalet; Escola Joan Maragall; Escola Matilde Orduña</div></div></div>
+<div class="card">
+<div class="ch"><span class="num" style="background:#1F8A60">6</span>
+<div class="ht"><span class="cbadge" style="color:#1F8A60">A.EE.13.6</span><div class="cn">Autoconsum fotovoltaic (6 equipaments)</div></div></div>
+<div id="m5" class="mini"></div>
+<div class="cf"><div class="row"><span style="color:#1F8A60;font-weight:700">Transformacions físiques</span><span class="bud">900.000 €</span></div>
+<div class="empl">CSE Can Vidalet; Edifici Cadí (Centre Molí-Cadí); Escola Can Vidalet; Escola Joan Maragall; Escola Matilde Orduña; Mercat Municipal de Can Vidalet</div></div></div>
+<div class="card">
+<div class="ch"><span class="num" style="background:#2B7FC4">7</span>
+<div class="ht"><span class="cbadge" style="color:#2B7FC4">B.CC.18.7</span><div class="cn">Ampliació del Parc de Can Vidalet</div></div></div>
+<div id="m6" class="mini"></div>
+<div class="cf"><div class="row"><span style="color:#2B7FC4;font-weight:700">Transició ecològica</span><span class="bud">2.593.134 €</span></div>
+<div class="empl">Parc de Can Vidalet</div></div></div>
+<div class="card">
+<div class="ch"><span class="num" style="background:#2B7FC4">8</span>
+<div class="ht"><span class="cbadge" style="color:#2B7FC4">B.CC.18.8</span><div class="cn">Refugi climàtic blau (CSE)</div></div></div>
+<div id="m7" class="mini"></div>
+<div class="cf"><div class="row"><span style="color:#2B7FC4;font-weight:700">Transició ecològica</span><span class="bud">2.109.838 €</span></div>
+<div class="empl">CSE Can Vidalet</div></div></div>
+<div class="card">
+<div class="ch"><span class="num" style="background:#2B7FC4">9</span>
+<div class="ht"><span class="cbadge" style="color:#2B7FC4">B.CC.18.9</span><div class="cn">Patis escolars oberts</div></div></div>
+<div id="m8" class="mini"></div>
+<div class="cf"><div class="row"><span style="color:#2B7FC4;font-weight:700">Transició ecològica</span><span class="bud">900.000 €</span></div>
+<div class="empl">Escola Can Vidalet; Escola Joan Maragall; Escola Matilde Orduña</div></div></div>
+<div class="card">
+<div class="ch"><span class="num" style="background:#2B7FC4">10</span>
+<div class="ht"><span class="cbadge" style="color:#2B7FC4">B.CC.19.10</span><div class="cn">Hub de ciclologística</div></div></div>
+<div id="m9" class="mini"></div>
+<div class="cf"><div class="row"><span style="color:#2B7FC4;font-weight:700">Transició ecològica</span><span class="bud">186.760 €</span></div>
+<div class="empl">Mercat Municipal de Can Vidalet</div></div></div>
+<div class="card">
+<div class="ch"><span class="num" style="background:#2B7FC4">11</span>
+<div class="ht"><span class="cbadge" style="color:#2B7FC4">B.IV.23.11</span><div class="cn">Infraestructura verda i biodiversitat</div></div></div>
+<div id="m10" class="mini"></div>
+<div class="cf"><div class="row"><span style="color:#2B7FC4;font-weight:700">Transició ecològica</span><span class="bud">210.000 €</span></div>
+<div class="empl">Parc de Can Vidalet; Plaça de Blas Infante</div></div></div>
+<div class="card">
+<div class="ch"><span class="num" style="background:#2B7FC4">12</span>
+<div class="ht"><span class="cbadge" style="color:#2B7FC4">B.EC.29.12</span><div class="cn">Deixalleria de barri</div></div></div>
+<div id="m11" class="mini"></div>
+<div class="cf"><div class="row"><span style="color:#2B7FC4;font-weight:700">Transició ecològica</span><span class="bud">168.425 €</span></div>
+<div class="empl">Deixalleria (Av. Ciutat de l&#x27;Hospitalet × c. Pau Torres)</div></div></div>
+<div class="card">
+<div class="ch"><span class="num" style="background:#EF6F4C">13</span>
+<div class="ht"><span class="cbadge" style="color:#EF6F4C">C.RD.31.13</span><div class="cn">Contra l&#x27;exclusió residencial</div></div></div>
+<div id="m12" class="mini"></div>
+<div class="cf"><div class="row"><span style="color:#EF6F4C;font-weight:700">Acció sociocomunitària</span><span class="bud">249.800 €</span></div>
+<div class="empl">Edifici Molí (Servei d&#x27;Ocupació); Locals/Serveis Socials c. dels Cedres</div></div></div>
+<div class="card">
+<div class="ch"><span class="num" style="background:#EF6F4C">14</span>
+<div class="ht"><span class="cbadge" style="color:#EF6F4C">C.RD.32.14</span><div class="cn">Convivència i enxarxament</div></div></div>
+<div id="m13" class="mini"></div>
+<div class="cf"><div class="row"><span style="color:#EF6F4C;font-weight:700">Acció sociocomunitària</span><span class="bud">259.394 €</span></div>
+<div class="empl">CSE Can Vidalet; Edifici Cadí (Centre Molí-Cadí); Edifici Molí (Servei d&#x27;Ocupació)</div></div></div>
+<div class="card">
+<div class="ch"><span class="num" style="background:#EF6F4C">15</span>
+<div class="ht"><span class="cbadge" style="color:#EF6F4C">C.RD.35.15</span><div class="cn">Suport a comunitats veïnals</div></div></div>
+<div id="m14" class="mini"></div>
+<div class="cf"><div class="row"><span style="color:#EF6F4C;font-weight:700">Acció sociocomunitària</span><span class="bud">597.421 €</span></div>
+<div class="empl">Edifici Cadí (Centre Molí-Cadí)</div></div></div>
+<div class="card">
+<div class="ch"><span class="num" style="background:#EF6F4C">16</span>
+<div class="ht"><span class="cbadge" style="color:#EF6F4C">C.EG.36.16</span><div class="cn">Temps x Tu (acollida d&#x27;infants)</div></div></div>
+<div id="m15" class="mini"></div>
+<div class="cf"><div class="row"><span style="color:#EF6F4C;font-weight:700">Acció sociocomunitària</span><span class="bud">140.200 €</span></div>
+<div class="empl">Esplai Pubilla Cases (frontera Esplugues/L&#x27;Hospitalet)</div></div></div>
+<div class="card">
+<div class="ch"><span class="num" style="background:#EF6F4C">17</span>
+<div class="ht"><span class="cbadge" style="color:#EF6F4C">C.EG.38.17</span><div class="cn">Prevenció del discurs d&#x27;odi</div></div></div>
+<div id="m16" class="mini"></div>
+<div class="cf"><div class="row"><span style="color:#EF6F4C;font-weight:700">Acció sociocomunitària</span><span class="bud">95.000 €</span></div>
+<div class="empl">Escola Can Vidalet; Espai Jove Remolí</div></div></div>
+<div class="card">
+<div class="ch"><span class="num" style="background:#EF6F4C">18</span>
+<div class="ht"><span class="cbadge" style="color:#EF6F4C">C.SE.41.18</span><div class="cn">Salut comunitària</div></div></div>
+<div id="m17" class="mini"></div>
+<div class="cf"><div class="row"><span style="color:#EF6F4C;font-weight:700">Acció sociocomunitària</span><span class="bud">96.110 €</span></div>
+<div class="empl">CAP Can Vidalet (Bòbila); CSE Can Vidalet; Edifici Cadí (Centre Molí-Cadí); Edifici Molí (Servei d&#x27;Ocupació); Espai Jove Remolí; Parc de Can Vidalet; Plaça de Blas Infante</div></div></div>
+<div class="card">
+<div class="ch"><span class="num" style="background:#EF6F4C">19</span>
+<div class="ht"><span class="cbadge" style="color:#EF6F4C">C.SE.42.19</span><div class="cn">Contra la soledat de la gent gran</div></div></div>
+<div id="m18" class="mini"></div>
+<div class="cf"><div class="row"><span style="color:#EF6F4C;font-weight:700">Acció sociocomunitària</span><span class="bud">251.350 €</span></div>
+<div class="empl">CSE Can Vidalet; Edifici Cadí (Centre Molí-Cadí); Espai Jove Remolí; Locals/Serveis Socials c. dels Cedres</div></div></div>
+<div class="card">
+<div class="ch"><span class="num" style="background:#EF6F4C">20</span>
+<div class="ht"><span class="cbadge" style="color:#EF6F4C">C.SE.44.20</span><div class="cn">Activa&#x27;t al barri</div></div></div>
+<div id="m19" class="mini"></div>
+<div class="cf"><div class="row"><span style="color:#EF6F4C;font-weight:700">Acció sociocomunitària</span><span class="bud">218.300 €</span></div>
+<div class="empl">CAP Can Vidalet (Bòbila); CSE Can Vidalet; Camp d&#x27;Esports El Molí; Edifici Cadí (Centre Molí-Cadí); Edifici Molí (Servei d&#x27;Ocupació); Espai Jove Remolí; Parc de Can Vidalet; Plaça de Blas Infante</div></div></div>
+<div class="card">
+<div class="ch"><span class="num" style="background:#EF6F4C">21</span>
+<div class="ht"><span class="cbadge" style="color:#EF6F4C">C.ED.47.21</span><div class="cn">Educació comunitària</div></div></div>
+<div id="m20" class="mini"></div>
+<div class="cf"><div class="row"><span style="color:#EF6F4C;font-weight:700">Acció sociocomunitària</span><span class="bud">599.866 €</span></div>
+<div class="empl">CFA Eugeni d&#x27;Ors (escola d&#x27;adults); CSE Can Vidalet; EOI Esplugues; Escola Can Vidalet; Espai Jove Remolí; Servei Educatiu Baix Llobregat</div></div></div>
+<div class="card">
+<div class="ch"><span class="num" style="background:#EF6F4C">22</span>
+<div class="ht"><span class="cbadge" style="color:#EF6F4C">C.ED.47.22</span><div class="cn">Noves oportunitats educatives</div></div></div>
+<div id="m21" class="mini"></div>
+<div class="cf"><div class="row"><span style="color:#EF6F4C;font-weight:700">Acció sociocomunitària</span><span class="bud">275.056 €</span></div>
+<div class="empl">CFA Eugeni d&#x27;Ors (escola d&#x27;adults); CSE Can Vidalet; EOI Esplugues; Escola Can Vidalet; Espai Jove Remolí; HUB del Benestar (nou equip., vora Parc); Servei Educatiu Baix Llobregat</div></div></div>
+<div class="card">
+<div class="ch"><span class="num" style="background:#EF6F4C">23</span>
+<div class="ht"><span class="cbadge" style="color:#EF6F4C">C.ET.51.23</span><div class="cn">Recapacita&#x27;t (capacitació i ocupació)</div></div></div>
+<div id="m22" class="mini"></div>
+<div class="cf"><div class="row"><span style="color:#EF6F4C;font-weight:700">Acció sociocomunitària</span><span class="bud">70.000 €</span></div>
+<div class="empl">Edifici Molí (Servei d&#x27;Ocupació); HUB del Benestar (nou equip., vora Parc)</div></div></div>
+<script>
+const T='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+function mk(i,pts,col,num){
+ const m=L.map('m'+i,{zoomControl:false,attributionControl:false,dragging:false,scrollWheelZoom:false,doubleClickZoom:false,keyboard:false});
+ L.tileLayer(T,{maxZoom:19}).addTo(m);
+ const ic=L.divIcon({className:'',html:'<div class="pin" style="background:'+col+';width:34px;height:34px;font-size:17px">'+num+'</div>',iconSize:[34,34],iconAnchor:[17,17]});
+ const g=[];
+ pts.forEach(p=>{ L.marker(p,{icon:ic}).addTo(m); g.push(p); });
+ if(g.length>1){ m.fitBounds(g,{padding:[46,46],maxZoom:17}); } else { m.setView(g[0],17); }
+ setTimeout(()=>m.invalidateSize(),200);
+}
+mk(0,[[41.3749, 2.0969]],'#1F8A60',1);
+mk(1,[[41.37404, 2.10089], [41.37255, 2.09689]],'#1F8A60',2);
+mk(2,[[41.37433, 2.09866]],'#1F8A60',3);
+mk(3,[[41.37196, 2.09629], [41.37592, 2.09997], [41.37302, 2.09911]],'#1F8A60',4);
+mk(4,[[41.37149, 2.09651], [41.37353, 2.09833], [41.37603, 2.09824]],'#1F8A60',5);
+mk(5,[[41.37261, 2.09733], [41.37404, 2.10089], [41.37416, 2.09816], [41.37353, 2.09833], [41.37149, 2.09651], [41.37603, 2.09824]],'#1F8A60',6);
+mk(6,[[41.3752, 2.0969]],'#2B7FC4',7);
+mk(7,[[41.37416, 2.09816]],'#2B7FC4',8);
+mk(8,[[41.37149, 2.09651], [41.37353, 2.09833], [41.37603, 2.09824]],'#2B7FC4',9);
+mk(9,[[41.37404, 2.10089]],'#2B7FC4',10);
+mk(10,[[41.3752, 2.0969], [41.37326, 2.09808]],'#2B7FC4',11);
+mk(11,[[41.37307, 2.09522]],'#2B7FC4',12);
+mk(12,[[41.37255, 2.09689], [41.37433, 2.09866]],'#EF6F4C',13);
+mk(13,[[41.37255, 2.09689], [41.37261, 2.09733], [41.37416, 2.09816]],'#EF6F4C',14);
+mk(14,[[41.37261, 2.09733]],'#EF6F4C',15);
+mk(15,[[41.37073, 2.09952]],'#EF6F4C',16);
+mk(16,[[41.37262, 2.097], [41.37353, 2.09833]],'#EF6F4C',17);
+mk(17,[[41.37416, 2.09816], [41.3752, 2.0969], [41.37326, 2.09808], [41.37349, 2.10018], [41.37262, 2.097], [41.37261, 2.09733], [41.37255, 2.09689]],'#EF6F4C',18);
+mk(18,[[41.37433, 2.09866], [41.37416, 2.09816], [41.37261, 2.09733], [41.37262, 2.097]],'#EF6F4C',19);
+mk(19,[[41.37416, 2.09816], [41.3752, 2.0969], [41.37326, 2.09808], [41.37349, 2.10018], [41.37262, 2.097], [41.37261, 2.09733], [41.37255, 2.09689], [41.37324, 2.09713]],'#EF6F4C',20);
+mk(20,[[41.37353, 2.09833], [41.37424, 2.09905], [41.37598, 2.09651], [41.37423, 2.09909], [41.37416, 2.09816], [41.37262, 2.097]],'#EF6F4C',21);
+mk(21,[[41.37353, 2.09833], [41.37424, 2.09905], [41.37598, 2.09651], [41.37423, 2.09909], [41.37416, 2.09816], [41.37262, 2.097], [41.3749, 2.0969]],'#EF6F4C',22);
+mk(22,[[41.37255, 2.09689], [41.3749, 2.0969]],'#EF6F4C',23);
+window.__ready=false;
+setTimeout(()=>{window.__ready=true;},2500);
+</script></body></html>
