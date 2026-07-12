@@ -3,8 +3,14 @@
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Inter:wght@400;500;600;700&family=Fraunces:ital@0;1&display=swap');
 :root{--verd:#1F8A60;--verdf:#15694A;--blau:#2B7FC4;--coral:#EF6F4C;--grafit:#1E2A3A;--sorra:#F6F1E7;--groc:#F4C84A;--gris:#7C8493}
+.lema{font-family:'Fraunces',serif;font-style:italic;color:var(--groc);font-size:15px;margin-top:5px}
+.gstats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:18px auto}
+.gstat{background:var(--grafit);color:#fff;border-radius:12px;padding:13px 14px;text-align:center}
+.gstat .v{font-family:'Bricolage Grotesque';font-weight:800;font-size:22px;line-height:1}
+.gstat .l{font-size:10.5px;color:#C7CFDA;margin-top:4px}
+@media(max-width:760px){.gstats{grid-template-columns:repeat(2,1fr)}}
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:Inter,Arial,sans-serif;color:var(--grafit);background:var(--sorra)}
 a{color:inherit}
@@ -56,9 +62,22 @@ footer{max-width:1200px;margin:26px auto 34px;padding:14px 22px;color:var(--gris
 </style></head><body>
 <header><div class="wrap"><div class="plus">+</div>
 <h1>Seguiment del Pla de Barris · <span class="g">Can Vidalet</span></h1>
+<p class="lema">Construïm benestar</p>
 <p>Com avança la transformació del barri, actuació per actuació · Esplugues de Llobregat · <span class="tag">Període 2026</span></p>
 </div></header>
 <div class="wrap">
+ <div class="sec">El Pla de Barris en xifres</div>
+ <div class="gstats">
+  <div class="gstat"><div class="v">23</div><div class="l">Actuacions</div></div>
+  <div class="gstat"><div class="v" style="color:#F4C84A">24,99 M€</div><div class="l">Inversió total</div></div>
+  <div class="gstat"><div class="v">3</div><div class="l">Àmbits d'intervenció</div></div>
+  <div class="gstat"><div class="v">14.041</div><div class="l">Habitants</div></div>
+  <div class="gstat"><div class="v">52,25 ha</div><div class="l">Superfície del barri</div></div>
+  <div class="gstat"><div class="v">8</div><div class="l">Seccions censals</div></div>
+  <div class="gstat"><div class="v" style="color:#5FBF97">−159 t/any</div><div class="l">CO₂ evitat</div></div>
+  <div class="gstat"><div class="v">2026–2030</div><div class="l">Horitzó d'execució</div></div>
+ </div>
+ <div class="sec">Estat d'execució</div>
  <div class="kpis" id="kpis"></div>
  <div class="sec">On som al territori</div>
  <div class="card"><div id="map"></div>
