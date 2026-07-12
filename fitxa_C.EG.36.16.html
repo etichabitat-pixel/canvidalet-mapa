@@ -1,20 +1,19 @@
 <!DOCTYPE html><html lang="ca"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>C.EG.36.16 · Temps x Tu. Servei d&#x27;acollida puntual i a demanda d&#x27;infants de 0 a 12 anys — Fitxa PMII Can Vidalet</title>
+<title>C.EG.36.16 · Temps x Tu (acollida d&#x27;infants) — Fitxa PMII Can Vidalet</title>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Fraunces:ital@0;1&family=Inter:wght@400;500;600;700&display=swap');
-:root{--verd:#1F8A60;--verdf:#15694A;--coral:#EF6F4C;--grafit:#1E2A3A;--sorra:#F6F1E7;--groc:#F4C84A;--gris:#7C8493;--amb:#EF6F4C}
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Fraunces:ital@0;1&family=Inter:wght@400;500;600;700&display=swap');
+:root{--verd:#1F8A60;--verdf:#15694A;--blau:#2B7FC4;--coral:#EF6F4C;--grafit:#1E2A3A;--sorra:#F6F1E7;--groc:#F4C84A;--gris:#7C8493;--amb:#EF6F4C}
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:Inter,Arial,sans-serif;color:var(--grafit);background:var(--sorra);line-height:1.55}
 .wrap{max-width:900px;margin:0 auto;padding:0 18px 60px}
 .top{background:var(--grafit);color:#fff;padding:22px 0}
 .top .wrap{padding-bottom:0}
-.back{color:#C7CFDA;text-decoration:none;font-size:13px;font-weight:600}
-.back:hover{color:#fff}
+.back{color:#C7CFDA;text-decoration:none;font-size:13px;font-weight:600} .back:hover{color:#fff}
 .head{display:flex;gap:14px;align-items:flex-start;margin-top:14px}
-.num{background:var(--amb);color:#fff;font-family:'Bricolage Grotesque';font-weight:800;font-size:20px;width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex:none}
-.badge{display:inline-block;background:var(--amb);color:#fff;font-weight:700;font-size:11px;padding:3px 10px;border-radius:20px;letter-spacing:.03em}
+.num{background:var(--amb);color:#fff;font-family:'Bricolage Grotesque';font-weight:800;font-size:20px;width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex:none}
+.badge{display:inline-block;background:var(--amb);color:#fff;font-weight:700;font-size:11px;padding:3px 10px;border-radius:20px}
 h1{font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(1.4rem,3.4vw,2.1rem);line-height:1.12;margin-top:8px;color:#fff}
 .amb{color:#C7CFDA;font-size:13px;margin-top:6px}
 .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:-28px}
@@ -27,8 +26,7 @@ p.lead{font-size:1.02rem;color:#41506a}
 table{width:100%;border-collapse:collapse;margin-top:8px;font-size:.92rem}
 th,td{text-align:left;padding:8px 10px;border-bottom:1px solid #eee}
 th{background:var(--grafit);color:#fff;font-family:'Bricolage Grotesque';font-weight:700;font-size:.82rem}
-td.r,th.r{text-align:right}
-tr:nth-child(even) td{background:rgba(31,138,96,.05)}
+td.r,th.r{text-align:right} tr:nth-child(even) td{background:rgba(31,138,96,.05)}
 .fin{display:flex;gap:0;border-radius:12px;overflow:hidden;margin-top:10px;font-size:.85rem;font-weight:700;color:#fff}
 .fin .g{background:var(--verd);padding:12px} .fin .m{background:var(--grafit);padding:12px}
 #map{height:340px;border-radius:14px;margin-top:8px;border:1px solid #e3ddd0}
@@ -36,17 +34,16 @@ tr:nth-child(even) td{background:rgba(31,138,96,.05)}
 .pill{display:inline-block;background:rgba(31,138,96,.1);color:var(--verdf);font-weight:600;font-size:12px;padding:4px 10px;border-radius:20px;margin:2px}
 .co2{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
 .co2 .big{font-family:'Bricolage Grotesque';font-weight:800;font-size:2.4rem;color:var(--verdf);line-height:1;background:var(--sorra);border-radius:14px;padding:16px 20px;border:2px solid rgba(31,138,96,.25)}
-.co2 .big span{font-size:1rem;color:var(--gris);font-weight:600;display:block;margin-top:6px}
 .co2 .txt{flex:1;min-width:220px;font-size:.96rem;color:#41506a}
 .co2note{margin-top:12px;font-size:.8rem;color:var(--gris);border-top:1px dashed #e3ddd0;padding-top:10px}
+.pin{color:#fff;font-family:'Bricolage Grotesque';font-weight:800;border:2px solid #fff;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 1px 4px rgba(0,0,0,.4)}
+.leaflet-container{background:#eaeaea}
 </style></head><body>
 <div class="top"><div class="wrap">
 <a class="back" href="index.html">← Torna al mapa global de les 23 actuacions</a>
 <div class="head"><div class="num">16</div><div>
-<span class="badge">C.EG.36.16</span>
-<h1>Temps x Tu. Servei d&#x27;acollida puntual i a demanda d&#x27;infants de 0 a 12 anys</h1>
-<div class="amb">Àmbit C · Acció comunitària i cicles de vida · Equitat de gènere i igualtat de tracte · Puntual</div>
-</div></div>
+<span class="badge">C.EG.36.16</span><h1>Temps x Tu (acollida d&#x27;infants)</h1>
+<div class="amb">Àmbit C · Acció sociocomunitària · Equitat de gènere i igualtat de tracte · Abast de barri</div></div></div>
 </div></div>
 <div class="wrap">
 <div class="kpis">
@@ -55,36 +52,26 @@ tr:nth-child(even) td{background:rgba(31,138,96,.05)}
 <div class="kpi"><div class="l">Aportació municipal</div><div class="v">56.080 €</div></div>
 <div class="kpi"><div class="l">Naturalesa</div><div class="v">Corrent</div></div>
 </div>
-
 <div class="card"><h2>Descripció i abast territorial</h2>
-<p class="lead">Actuació emmarcada en l'Àmbit C · Acció comunitària i cicles de vida, dins la línia temàtica d'Equitat de gènere i igualtat de tracte. Temps x Tu. Servei d&#x27;acollida puntual i a demanda d&#x27;infants de 0 a 12 anys. Se situa a: Servei d&#x27;acollida d&#x27;infants Temps x Tu.</p>
-<div style="margin-top:12px"><span class="pill">Àmbit temàtic: Equitat de gènere i igualtat de tracte</span> <span class="pill">Localització: Servei d&#x27;acollida d&#x27;infants Temps x Tu</span> <span class="pill">Tipus: Puntual</span></div>
-</div>
-
+<p class="lead">Actuació emmarcada en l'Àmbit C · Acció sociocomunitària, dins la línia temàtica d'Equitat de gènere i igualtat de tracte. Temps x Tu (acollida d&#x27;infants). Se situa a: Club Esplai Pubilla Casas.</p>
+<div style="margin-top:12px"><span class="pill">Àmbit temàtic: Equitat de gènere i igualtat de tracte</span> <span class="pill">Localització: Club Esplai Pubilla Casas</span> <span class="pill">Tipus: Abast de barri</span></div></div>
 <div class="card"><h2>Finançament (model 60/40)</h2>
-<div class="fin"><div class="g" style="flex:60">Generalitat · 60% · 84.120 €</div><div class="m" style="flex:40">Ajuntament · 40% · 56.080 €</div></div>
-</div>
-
+<div class="fin"><div class="g" style="flex:60">Generalitat · 60% · 84.120 €</div><div class="m" style="flex:40">Ajuntament · 40% · 56.080 €</div></div></div>
 <div class="card"><h2>Calendari d'execució</h2>
 <table><thead><tr><th>Any</th><th class="r">Inversió prevista</th></tr></thead><tbody><tr><td>2027</td><td class='r'>2.400 €</td></tr><tr><td>2028</td><td class='r'>34.450 €</td></tr><tr><td>2029</td><td class='r'>34.450 €</td></tr><tr><td>2030</td><td class='r'>34.450 €</td></tr><tr><td>2031</td><td class='r'>34.450 €</td></tr></tbody>
-<tfoot><tr><th>Total</th><th class="r">140.200 €</th></tr></tfoot></table>
-</div>
-
-<div class="card"><h2>Persones destinatàries</h2>
-<p class="lead">Famílies residents al barri de Can Vidalet i en cas de disponibilitat de places a totes les famílies empadronades a Esplugues de Llobregat.
+<tfoot><tr><th>Total</th><th class="r">140.200 €</th></tr></tfoot></table></div>
+<div class="card"><h2>Persones destinatàries</h2><p class="lead">Famílies residents al barri de Can Vidalet i en cas de disponibilitat de places a totes les famílies empadronades a Esplugues de Llobregat.
 Es prioritzarà l’accés a les famílies amb més dificultats i necessitats en l’exercici de la conciliació i la cura d’infants. Segons la Resolució de la IFE/3681/</p></div>
-
-<div class="card"><h2>Reducció d'emissions de CO₂</h2><div class="co2"><div class="big">−1,9<span>t CO₂/any a ple rendiment</span></div><div class="txt">Desplaçaments motoritzats evitats gràcies a la proximitat del servei al barri (0,1 kg CO₂/persona·km).</div></div><div class="co2note">Càlcul amb l'eina oficial de càlcul d'emissions de GEH de l'Oficina Catalana del Canvi Climàtic (OCCC), amb els factors d'emissió oficials 2025.</div></div>
-
+<div class="card"><h2>Reducció d'emissions de CO₂</h2><div class="co2"><div class="big">−1,9 t/any</div><div class="txt">Reducció estimada a ple rendiment, calculada actuació per actuació amb els factors oficials de l'OCCC.</div></div><div class="co2note">Càlcul amb l'eina oficial de càlcul d'emissions de GEH de l'Oficina Catalana del Canvi Climàtic (OCCC), factors 2025.</div></div>
 <div class="card"><h2>Indicadors de seguiment</h2><table><thead><tr><th>Tipus</th><th>Indicador</th><th class="r">Fita</th></tr></thead><tbody><tr><td>de context</td><td>% de famílies monomarentals ateses per Serveis Socials Bàsics</td><td class='r'>-</td></tr><tr><td>de context</td><td>% de dones en situació d&#x27;atur</td><td class='r'>-</td></tr><tr><td>de context</td><td>% de dones en situació d&#x27;atur de llarga durada</td><td class='r'>-</td></tr><tr><td>de recursos (input)</td><td>Nombre d&#x27;espais físics habilitats i equipats per a l&#x27;atenció de la infància i les xarxes familiars.</td><td class='r'>≥ 2</td></tr><tr><td>d’activitat o procés</td><td>Nombre anual de activitats de difusió i comunicació del servei</td><td class='r'>≥ 10</td></tr><tr><td>d’activitat o procés</td><td>Nombre de protocols amb serveis Serveis municipals derivants.</td><td class='r'>≥ 2</td></tr><tr><td>d’activitat o procés</td><td>Nombre anual d&#x27;activitats culturals de la ciutat cobertes amb èxit pel servei</td><td class='r'>≥ 4</td></tr><tr><td>de producte (output)</td><td>Nombre d&#x27;usos anuals del servei d&#x27;atenció infantil registrats</td><td class='r'>≥ 500</td></tr><tr><td>de producte (output)</td><td>Nombre anual de persones cuidadores derivades per serveis municipals que han utilitzat el servei</td><td class='r'>≥ 5</td></tr><tr><td>de producte (output)</td><td>Nombre total d&#x27;usos anuals del servei d&#x27;acollida</td><td class='r'>≥ 500</td></tr><tr><td>de resultat (outcome)</td><td>% de dones participants que reporten haver disposat de més temps propi</td><td class='r'>≥ 80%</td></tr><tr><td>d’activitat o procés</td><td>Nombre anual de famílies de col·lectius prioritaris ateses</td><td class='r'>≥ 20</td></tr><tr><td>de producte (output)</td><td>% aprofitament anual (número d&#x27;usos/ capacitat d&#x27;usos del servei)</td><td class='r'>≥ 60%</td></tr><tr><td>de resultat (outcome)</td><td>% de dones participants que inicien formació o milloren la seva situació laboral</td><td class='r'>≥ 25%</td></tr><tr><td>de producte (output)</td><td>% de satisfacció de les famílies usuàries respecte a la qualitat de la cura dels infants.</td><td class='r'>≥ 80 %</td></tr><tr><td>de resultat (outcome)</td><td>Nombre de familíes que han augmentat la seva xarxa de suport al final del projecte</td><td class='r'>≥ 25%</td></tr></tbody></table></div>
-
-<div class="card"><h2>Ubicació al barri</h2>
-<div id="map"></div></div>
-
-<div class="foot">PMII Can Vidalet · Construïm benestar · Pla de Barris i Viles 2026 · Ajuntament d'Esplugues de Llobregat<br>Localització indicativa · Base cartogràfica © OpenStreetMap</div>
+<div class="card"><h2>Ubicació al barri</h2><div id="map"></div></div>
+<div class="foot">PMII Can Vidalet · Construïm benestar · Pla de Barris i Viles 2026 · Ajuntament d'Esplugues de Llobregat<br>Base © OpenStreetMap · © CARTO · localitzacions verificades dins l'AAE</div>
 </div>
 <script>
-const m=L.map('map',{scrollWheelZoom:false}).setView([41.374,2.09885],17);
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'© OpenStreetMap'}).addTo(m);
-L.circleMarker([41.374,2.09885],{radius:12,fillColor:'#EF6F4C',color:'#fff',weight:3,fillOpacity:.95}).addTo(m).bindPopup('C.EG.36.16 · Temps x Tu. Servei d&#x27;acollida puntual i a demanda d&#x27;infants de 0 a 12 anys');
+const pts=[[41.37073, 2.09952]]; const col='#EF6F4C'; const num=16;
+const m=L.map('map',{scrollWheelZoom:false});
+L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',{maxZoom:20,subdomains:'abcd',attribution:'© OpenStreetMap · © CARTO'}).addTo(m);
+const ic=L.divIcon({className:'',html:'<div class="pin" style="background:'+col+';width:34px;height:34px;font-size:16px">'+num+'</div>',iconSize:[34,34],iconAnchor:[17,17]});
+pts.forEach(p=>L.marker(p,{icon:ic}).addTo(m));
+if(pts.length>1){m.fitBounds(pts,{padding:[50,50],maxZoom:17});}else{m.setView(pts[0],17);}
 </script></body></html>

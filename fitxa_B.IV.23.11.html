@@ -1,20 +1,19 @@
 <!DOCTYPE html><html lang="ca"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>B.IV.23.11 · Biodiversitat urbana a Can Vidalet: resiliència climàtica i ciència ciutadana — Fitxa PMII Can Vidalet</title>
+<title>B.IV.23.11 · Infraestructura verda i biodiversitat — Fitxa PMII Can Vidalet</title>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Fraunces:ital@0;1&family=Inter:wght@400;500;600;700&display=swap');
-:root{--verd:#1F8A60;--verdf:#15694A;--coral:#EF6F4C;--grafit:#1E2A3A;--sorra:#F6F1E7;--groc:#F4C84A;--gris:#7C8493;--amb:#0E7C86}
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Fraunces:ital@0;1&family=Inter:wght@400;500;600;700&display=swap');
+:root{--verd:#1F8A60;--verdf:#15694A;--blau:#2B7FC4;--coral:#EF6F4C;--grafit:#1E2A3A;--sorra:#F6F1E7;--groc:#F4C84A;--gris:#7C8493;--amb:#2B7FC4}
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:Inter,Arial,sans-serif;color:var(--grafit);background:var(--sorra);line-height:1.55}
 .wrap{max-width:900px;margin:0 auto;padding:0 18px 60px}
 .top{background:var(--grafit);color:#fff;padding:22px 0}
 .top .wrap{padding-bottom:0}
-.back{color:#C7CFDA;text-decoration:none;font-size:13px;font-weight:600}
-.back:hover{color:#fff}
+.back{color:#C7CFDA;text-decoration:none;font-size:13px;font-weight:600} .back:hover{color:#fff}
 .head{display:flex;gap:14px;align-items:flex-start;margin-top:14px}
-.num{background:var(--amb);color:#fff;font-family:'Bricolage Grotesque';font-weight:800;font-size:20px;width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex:none}
-.badge{display:inline-block;background:var(--amb);color:#fff;font-weight:700;font-size:11px;padding:3px 10px;border-radius:20px;letter-spacing:.03em}
+.num{background:var(--amb);color:#fff;font-family:'Bricolage Grotesque';font-weight:800;font-size:20px;width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex:none}
+.badge{display:inline-block;background:var(--amb);color:#fff;font-weight:700;font-size:11px;padding:3px 10px;border-radius:20px}
 h1{font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(1.4rem,3.4vw,2.1rem);line-height:1.12;margin-top:8px;color:#fff}
 .amb{color:#C7CFDA;font-size:13px;margin-top:6px}
 .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:-28px}
@@ -27,8 +26,7 @@ p.lead{font-size:1.02rem;color:#41506a}
 table{width:100%;border-collapse:collapse;margin-top:8px;font-size:.92rem}
 th,td{text-align:left;padding:8px 10px;border-bottom:1px solid #eee}
 th{background:var(--grafit);color:#fff;font-family:'Bricolage Grotesque';font-weight:700;font-size:.82rem}
-td.r,th.r{text-align:right}
-tr:nth-child(even) td{background:rgba(31,138,96,.05)}
+td.r,th.r{text-align:right} tr:nth-child(even) td{background:rgba(31,138,96,.05)}
 .fin{display:flex;gap:0;border-radius:12px;overflow:hidden;margin-top:10px;font-size:.85rem;font-weight:700;color:#fff}
 .fin .g{background:var(--verd);padding:12px} .fin .m{background:var(--grafit);padding:12px}
 #map{height:340px;border-radius:14px;margin-top:8px;border:1px solid #e3ddd0}
@@ -36,17 +34,16 @@ tr:nth-child(even) td{background:rgba(31,138,96,.05)}
 .pill{display:inline-block;background:rgba(31,138,96,.1);color:var(--verdf);font-weight:600;font-size:12px;padding:4px 10px;border-radius:20px;margin:2px}
 .co2{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
 .co2 .big{font-family:'Bricolage Grotesque';font-weight:800;font-size:2.4rem;color:var(--verdf);line-height:1;background:var(--sorra);border-radius:14px;padding:16px 20px;border:2px solid rgba(31,138,96,.25)}
-.co2 .big span{font-size:1rem;color:var(--gris);font-weight:600;display:block;margin-top:6px}
 .co2 .txt{flex:1;min-width:220px;font-size:.96rem;color:#41506a}
 .co2note{margin-top:12px;font-size:.8rem;color:var(--gris);border-top:1px dashed #e3ddd0;padding-top:10px}
+.pin{color:#fff;font-family:'Bricolage Grotesque';font-weight:800;border:2px solid #fff;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 1px 4px rgba(0,0,0,.4)}
+.leaflet-container{background:#eaeaea}
 </style></head><body>
 <div class="top"><div class="wrap">
 <a class="back" href="index.html">← Torna al mapa global de les 23 actuacions</a>
 <div class="head"><div class="num">11</div><div>
-<span class="badge">B.IV.23.11</span>
-<h1>Biodiversitat urbana a Can Vidalet: resiliència climàtica i ciència ciutadana</h1>
-<div class="amb">Àmbit B · Cohesió i comunitat en el territori · Infraestructura verda · Puntual</div>
-</div></div>
+<span class="badge">B.IV.23.11</span><h1>Infraestructura verda i biodiversitat</h1>
+<div class="amb">Àmbit B · Transició ecològica · Infraestructura verda · Abast de barri</div></div></div>
 </div></div>
 <div class="wrap">
 <div class="kpis">
@@ -55,35 +52,25 @@ tr:nth-child(even) td{background:rgba(31,138,96,.05)}
 <div class="kpi"><div class="l">Aportació municipal</div><div class="v">84.000 €</div></div>
 <div class="kpi"><div class="l">Naturalesa</div><div class="v">Capital</div></div>
 </div>
-
 <div class="card"><h2>Descripció i abast territorial</h2>
-<p class="lead">Actuació emmarcada en l'Àmbit B · Cohesió i comunitat en el territori, dins la línia temàtica d'Infraestructura verda. Biodiversitat urbana a Can Vidalet: resiliència climàtica i ciència ciutadana. Se situa a: Infraestructura verda i biodiversitat (parc i entorn).</p>
-<div style="margin-top:12px"><span class="pill">Àmbit temàtic: Infraestructura verda</span> <span class="pill">Localització: Infraestructura verda i biodiversitat (parc i entorn)</span> <span class="pill">Tipus: Puntual</span></div>
-</div>
-
+<p class="lead">Actuació emmarcada en l'Àmbit B · Transició ecològica, dins la línia temàtica d'Infraestructura verda. Infraestructura verda i biodiversitat. Se situa a: Parc i espais verds del barri.</p>
+<div style="margin-top:12px"><span class="pill">Àmbit temàtic: Infraestructura verda</span> <span class="pill">Localització: Parc i espais verds del barri</span> <span class="pill">Tipus: Abast de barri</span></div></div>
 <div class="card"><h2>Finançament (model 60/40)</h2>
-<div class="fin"><div class="g" style="flex:60">Generalitat · 60% · 126.000 €</div><div class="m" style="flex:40">Ajuntament · 40% · 84.000 €</div></div>
-</div>
-
+<div class="fin"><div class="g" style="flex:60">Generalitat · 60% · 126.000 €</div><div class="m" style="flex:40">Ajuntament · 40% · 84.000 €</div></div></div>
 <div class="card"><h2>Calendari d'execució</h2>
 <table><thead><tr><th>Any</th><th class="r">Inversió prevista</th></tr></thead><tbody><tr><td>2027</td><td class='r'>20.000 €</td></tr><tr><td>2028</td><td class='r'>25.000 €</td></tr><tr><td>2029</td><td class='r'>155.000 €</td></tr><tr><td>2030</td><td class='r'>7.000 €</td></tr><tr><td>2031</td><td class='r'>3.000 €</td></tr></tbody>
-<tfoot><tr><th>Total</th><th class="r">210.000 €</th></tr></tfoot></table>
-</div>
-
-<div class="card"><h2>Persones destinatàries</h2>
-<p class="lead">Gent gran (23% de població major de 65 anys, més exposada a plagues i malalties vectorials), infància i  jovent. AFA del barri, entitats veïnals i de voluntariat.</p></div>
-
-<div class="card"><h2>Reducció d'emissions de CO₂</h2><div class="co2"><div class="big">−6,0<span>t CO₂/any a ple rendiment</span></div><div class="txt">Embornal de carboni del verd urbà nou (parc, patis i infraestructura verda). Valor conjunt de les tres actuacions de verd nou: −6,0 t CO₂/any.</div></div><div class="co2note">Càlcul amb l'eina oficial de càlcul d'emissions de GEH de l'Oficina Catalana del Canvi Climàtic (OCCC), amb els factors d'emissió oficials 2025. · Valor conjunt de les actuacions de verd nou (no additiu per actuació).</div></div>
-
+<tfoot><tr><th>Total</th><th class="r">210.000 €</th></tr></tfoot></table></div>
+<div class="card"><h2>Persones destinatàries</h2><p class="lead">Gent gran (23% de població major de 65 anys, més exposada a plagues i malalties vectorials), infància i  jovent. AFA del barri, entitats veïnals i de voluntariat.</p></div>
+<div class="card"><h2>Reducció d'emissions de CO₂</h2><div class="co2"><div class="big">−6,0 t/any (verd nou, conjunt)</div><div class="txt">Reducció estimada a ple rendiment, calculada actuació per actuació amb els factors oficials de l'OCCC.</div></div><div class="co2note">Càlcul amb l'eina oficial de càlcul d'emissions de GEH de l'Oficina Catalana del Canvi Climàtic (OCCC), factors 2025.</div></div>
 <div class="card"><h2>Indicadors de seguiment</h2><table><thead><tr><th>Tipus</th><th>Indicador</th><th class="r">Fita</th></tr></thead><tbody><tr><td>de context</td><td>Redacció del projecte de la bassa naturalitzada i del SUDS</td><td class='r'>100%</td></tr><tr><td>d&#x27;execució</td><td>Instal·lació de caixes niu per a ocells insectívors</td><td class='r'>10</td></tr><tr><td>d&#x27;execució</td><td>Instal·lació de caixes niu per a ratpenats</td><td class='r'>10</td></tr><tr><td>d&#x27;execució</td><td>Campanyes de captura de cotorreta de pit gris (acumulat)</td><td class='r'>8</td></tr><tr><td>d&#x27;execució</td><td>Construcció de la bassa naturalitzada amb SUDS</td><td class='r'>100%</td></tr><tr><td>d&#x27;activitat o procés</td><td>Tallers per a la ciutadania realitzats (acumulat anual)</td><td class='r'>48</td></tr><tr><td>de resultat (outcome)</td><td>Caixes niu per a ocells insectívors habitades</td><td class='r'>≥ 5</td></tr><tr><td>de resultat (outcome)</td><td>Caixes niu per a ratpenats habitades</td><td class='r'>≥ 5</td></tr></tbody></table></div>
-
-<div class="card"><h2>Ubicació al barri</h2>
-<div id="map"></div></div>
-
-<div class="foot">PMII Can Vidalet · Construïm benestar · Pla de Barris i Viles 2026 · Ajuntament d'Esplugues de Llobregat<br>Localització indicativa · Base cartogràfica © OpenStreetMap</div>
+<div class="card"><h2>Ubicació al barri</h2><div id="map"></div></div>
+<div class="foot">PMII Can Vidalet · Construïm benestar · Pla de Barris i Viles 2026 · Ajuntament d'Esplugues de Llobregat<br>Base © OpenStreetMap · © CARTO · localitzacions verificades dins l'AAE</div>
 </div>
 <script>
-const m=L.map('map',{scrollWheelZoom:false}).setView([41.3757,2.0975],17);
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'© OpenStreetMap'}).addTo(m);
-L.circleMarker([41.3757,2.0975],{radius:12,fillColor:'#0E7C86',color:'#fff',weight:3,fillOpacity:.95}).addTo(m).bindPopup('B.IV.23.11 · Biodiversitat urbana a Can Vidalet: resiliència climàtica i ciència ciutadana');
+const pts=[[41.3752, 2.0969], [41.37326, 2.09808]]; const col='#2B7FC4'; const num=11;
+const m=L.map('map',{scrollWheelZoom:false});
+L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',{maxZoom:20,subdomains:'abcd',attribution:'© OpenStreetMap · © CARTO'}).addTo(m);
+const ic=L.divIcon({className:'',html:'<div class="pin" style="background:'+col+';width:34px;height:34px;font-size:16px">'+num+'</div>',iconSize:[34,34],iconAnchor:[17,17]});
+pts.forEach(p=>L.marker(p,{icon:ic}).addTo(m));
+if(pts.length>1){m.fitBounds(pts,{padding:[50,50],maxZoom:17});}else{m.setView(pts[0],17);}
 </script></body></html>
