@@ -24,129 +24,138 @@ header p{font-size:12.5px;color:#C7CFDA}
 .pin{color:#fff;font-family:'Bricolage Grotesque';font-weight:800;border:2px solid #fff;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 1px 4px rgba(0,0,0,.4)}
 .leaflet-container{background:#eaeaea}
 footer{max-width:1180px;margin:8px auto 30px;padding:10px 22px;color:#7C8493;font-size:11.5px}
+.filterbar{max-width:1180px;margin:16px auto 0;padding:0 22px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.fsearch{flex:1;min-width:220px;padding:9px 12px;border:1px solid #d7d1c4;border-radius:8px;font-size:14px;font-family:inherit}
+.fchips{display:flex;gap:6px}
+.fchip{cursor:pointer;font-weight:700;font-size:12px;padding:7px 13px;border-radius:20px;color:#fff;user-select:none}
+.fchip.A{background:#1F8A60}.fchip.B{background:#2B7FC4}.fchip.C{background:#EF6F4C}
+.fchip.off{opacity:.32}
+.nores{max-width:1180px;margin:20px auto;padding:0 22px;color:#7C8493;display:none}
 </style></head><body>
 <header><div class="plus">+</div><h1>Can Vidalet · Fitxes cartogràfiques per àmbit</h1><p>Pla de Barris i Viles 2026 · Ajuntament d&#x27;Esplugues de Llobregat · clica una actuació per obrir la seva fitxa</p></header>
+<div class="filterbar"><input class="fsearch" id="q" placeholder="Cerca una actuació per nom o codi…" autocomplete="off"><div class="fchips"><span class="fchip A" data-a="A">Àmbit A</span><span class="fchip B" data-a="B">Àmbit B</span><span class="fchip C" data-a="C">Àmbit C</span></div></div>
 <div class="sec" style="border-color:#1F8A60"><span style="color:#1F8A60">Àmbit A · Transformacions físiques</span></div>
-<div class="grid"><a class="card" href="fitxa_A.UR.3.1.html">
+<div class="grid"><a class="card" data-amb="A" data-txt="1 hub del benestar a.ur.3.1" href="fitxa_A.UR.3.1.html">
 <div class="ch"><span class="num" style="background:#1F8A60">1</span>
 <div><span class="cbadge" style="color:#1F8A60">A.UR.3.1</span><div class="cn">HUB del Benestar</div></div></div>
 <div id="m0" class="mini"></div>
 <div class="cf"><div class="row"><span style="color:#1F8A60;font-weight:700">Transformacions físiques</span><span class="bud">10.569.526 €</span></div>
-<div class="empl">Nou equipament, vora el Parc</div><div class="cta">Veure fitxa completa →</div></div></a><a class="card" href="fitxa_A.UR.6.2.html">
+<div class="empl">Nou equipament, vora el Parc</div><div class="cta">Veure fitxa completa →</div></div></a><a class="card" data-amb="A" data-txt="2 mercat municipal: espai d&#x27;oportunitats a.ur.6.2" href="fitxa_A.UR.6.2.html">
 <div class="ch"><span class="num" style="background:#1F8A60">2</span>
 <div><span class="cbadge" style="color:#1F8A60">A.UR.6.2</span><div class="cn">Mercat municipal: espai d&#x27;oportunitats</div></div></div>
 <div id="m1" class="mini"></div>
 <div class="cf"><div class="row"><span style="color:#1F8A60;font-weight:700">Transformacions físiques</span><span class="bud">500.000 €</span></div>
-<div class="empl">Mercat municipal+Oficina ocupació Edifici Molí</div><div class="cta">Veure fitxa completa →</div></div></a><a class="card" href="fitxa_A.UR.3.3.html">
+<div class="empl">Mercat municipal+Oficina ocupació Edifici Molí</div><div class="cta">Veure fitxa completa →</div></div></a><a class="card" data-amb="A" data-txt="3 locals del carrer cedres a.ur.3.3" href="fitxa_A.UR.3.3.html">
 <div class="ch"><span class="num" style="background:#1F8A60">3</span>
 <div><span class="cbadge" style="color:#1F8A60">A.UR.3.3</span><div class="cn">Locals del carrer Cedres</div></div></div>
 <div id="m2" class="mini"></div>
 <div class="cf"><div class="row"><span style="color:#1F8A60;font-weight:700">Transformacions físiques</span><span class="bud">608.444 €</span></div>
-<div class="empl">Locals del carrer Cedres</div><div class="cta">Veure fitxa completa →</div></div></a><a class="card" href="fitxa_A.EE.15.4.html">
+<div class="empl">Locals del carrer Cedres</div><div class="cta">Veure fitxa completa →</div></div></a><a class="card" data-amb="A" data-txt="4 enllumenat públic led a.ee.15.4" href="fitxa_A.EE.15.4.html">
 <div class="ch"><span class="num" style="background:#1F8A60">4</span>
 <div><span class="cbadge" style="color:#1F8A60">A.EE.15.4</span><div class="cn">Enllumenat públic LED</div></div></div>
 <div id="m3" class="mini"></div>
 <div class="cf"><div class="row"><span style="color:#1F8A60;font-weight:700">Transformacions físiques</span><span class="bud">803.000 €</span></div>
-<div class="empl">Carrer Molí i plaça Macael; plaça Jacint Benavent i carrer Magnòlies; carrer Verge de la Mercè i carrer Serra del Cadí</div><div class="cta">Veure fitxa completa →</div></div></a><a class="card" href="fitxa_A.EE.13.5.html">
+<div class="empl">Carrer Molí i plaça Macael; plaça Jacint Benavent i carrer Magnòlies; carrer Verge de la Mercè i carrer Serra del Cadí</div><div class="cta">Veure fitxa completa →</div></div></a><a class="card" data-amb="A" data-txt="5 rehabilitació tèrmica d&#x27;escoles a.ee.13.5" href="fitxa_A.EE.13.5.html">
 <div class="ch"><span class="num" style="background:#1F8A60">5</span>
 <div><span class="cbadge" style="color:#1F8A60">A.EE.13.5</span><div class="cn">Rehabilitació tèrmica d&#x27;escoles</div></div></div>
 <div id="m4" class="mini"></div>
 <div class="cf"><div class="row"><span style="color:#1F8A60;font-weight:700">Transformacions físiques</span><span class="bud">1.503.000 €</span></div>
-<div class="empl">3 Escoles públiques del barri</div><div class="cta">Veure fitxa completa →</div></div></a><a class="card" href="fitxa_A.EE.13.6.html">
+<div class="empl">3 Escoles públiques del barri</div><div class="cta">Veure fitxa completa →</div></div></a><a class="card" data-amb="A" data-txt="6 autoconsum fotovoltaic (6 equipaments) a.ee.13.6" href="fitxa_A.EE.13.6.html">
 <div class="ch"><span class="num" style="background:#1F8A60">6</span>
 <div><span class="cbadge" style="color:#1F8A60">A.EE.13.6</span><div class="cn">Autoconsum fotovoltaic (6 equipaments)</div></div></div>
 <div id="m5" class="mini"></div>
 <div class="cf"><div class="row"><span style="color:#1F8A60;font-weight:700">Transformacions físiques</span><span class="bud">900.000 €</span></div>
 <div class="empl">6 equipaments municipals: Edifici Cadí, Mercat Municipal, CSE Can Vidalet, CEIP Can Vidalet, CEIP Joan Maragall i CEIP Matilde Orduña</div><div class="cta">Veure fitxa completa →</div></div></a></div>
 <div class="sec" style="border-color:#2B7FC4"><span style="color:#2B7FC4">Àmbit B · Transició ecològica</span></div>
-<div class="grid"><a class="card" href="fitxa_B.CC.18.7.html">
+<div class="grid"><a class="card" data-amb="B" data-txt="7 ampliació del parc de can vidalet b.cc.18.7" href="fitxa_B.CC.18.7.html">
 <div class="ch"><span class="num" style="background:#2B7FC4">7</span>
 <div><span class="cbadge" style="color:#2B7FC4">B.CC.18.7</span><div class="cn">Ampliació del Parc de Can Vidalet</div></div></div>
 <div id="m6" class="mini"></div>
 <div class="cf"><div class="row"><span style="color:#2B7FC4;font-weight:700">Transició ecològica</span><span class="bud">2.593.134 €</span></div>
-<div class="empl">Parc de Can Vidalet</div><div class="cta">Veure fitxa completa →</div></div></a><a class="card" href="fitxa_B.CC.18.8.html">
+<div class="empl">Parc de Can Vidalet</div><div class="cta">Veure fitxa completa →</div></div></a><a class="card" data-amb="B" data-txt="8 refugi climàtic blau (cse) b.cc.18.8" href="fitxa_B.CC.18.8.html">
 <div class="ch"><span class="num" style="background:#2B7FC4">8</span>
 <div><span class="cbadge" style="color:#2B7FC4">B.CC.18.8</span><div class="cn">Refugi climàtic blau (CSE)</div></div></div>
 <div id="m7" class="mini"></div>
 <div class="cf"><div class="row"><span style="color:#2B7FC4;font-weight:700">Transició ecològica</span><span class="bud">2.109.838 €</span></div>
-<div class="empl">Complex Socioesportiu</div><div class="cta">Veure fitxa completa →</div></div></a><a class="card" href="fitxa_B.CC.18.9.html">
+<div class="empl">Complex Socioesportiu</div><div class="cta">Veure fitxa completa →</div></div></a><a class="card" data-amb="B" data-txt="9 patis escolars oberts b.cc.18.9" href="fitxa_B.CC.18.9.html">
 <div class="ch"><span class="num" style="background:#2B7FC4">9</span>
 <div><span class="cbadge" style="color:#2B7FC4">B.CC.18.9</span><div class="cn">Patis escolars oberts</div></div></div>
 <div id="m8" class="mini"></div>
 <div class="cf"><div class="row"><span style="color:#2B7FC4;font-weight:700">Transició ecològica</span><span class="bud">900.000 €</span></div>
-<div class="empl">Patis de les 3 escoles públiques</div><div class="cta">Veure fitxa completa →</div></div></a><a class="card" href="fitxa_B.CC.19.10.html">
+<div class="empl">Patis de les 3 escoles públiques</div><div class="cta">Veure fitxa completa →</div></div></a><a class="card" data-amb="B" data-txt="10 hub de ciclologística b.cc.19.10" href="fitxa_B.CC.19.10.html">
 <div class="ch"><span class="num" style="background:#2B7FC4">10</span>
 <div><span class="cbadge" style="color:#2B7FC4">B.CC.19.10</span><div class="cn">Hub de ciclologística</div></div></div>
 <div id="m9" class="mini"></div>
 <div class="cf"><div class="row"><span style="color:#2B7FC4;font-weight:700">Transició ecològica</span><span class="bud">186.760 €</span></div>
-<div class="empl">Hub d’última milla (ubicat al mercat)</div><div class="cta">Veure fitxa completa →</div></div></a><a class="card" href="fitxa_B.IV.23.11.html">
+<div class="empl">Hub d’última milla (ubicat al mercat)</div><div class="cta">Veure fitxa completa →</div></div></a><a class="card" data-amb="B" data-txt="11 infraestructura verda i biodiversitat b.iv.23.11" href="fitxa_B.IV.23.11.html">
 <div class="ch"><span class="num" style="background:#2B7FC4">11</span>
 <div><span class="cbadge" style="color:#2B7FC4">B.IV.23.11</span><div class="cn">Infraestructura verda i biodiversitat</div></div></div>
 <div id="m10" class="mini"></div>
 <div class="cf"><div class="row"><span style="color:#2B7FC4;font-weight:700">Transició ecològica</span><span class="bud">210.000 €</span></div>
-<div class="empl">Parc i espais verds del barri</div><div class="cta">Veure fitxa completa →</div></div></a><a class="card" href="fitxa_B.EC.29.12.html">
+<div class="empl">Parc i espais verds del barri</div><div class="cta">Veure fitxa completa →</div></div></a><a class="card" data-amb="B" data-txt="12 deixalleria de barri b.ec.29.12" href="fitxa_B.EC.29.12.html">
 <div class="ch"><span class="num" style="background:#2B7FC4">12</span>
 <div><span class="cbadge" style="color:#2B7FC4">B.EC.29.12</span><div class="cn">Deixalleria de barri</div></div></div>
 <div id="m11" class="mini"></div>
 <div class="cf"><div class="row"><span style="color:#2B7FC4;font-weight:700">Transició ecològica</span><span class="bud">168.425 €</span></div>
 <div class="empl">Av. Ciutat de L’Hospitalet cantonada C. Pau Torres</div><div class="cta">Veure fitxa completa →</div></div></a></div>
 <div class="sec" style="border-color:#EF6F4C"><span style="color:#EF6F4C">Àmbit C · Acció sociocomunitària</span></div>
-<div class="grid"><a class="card" href="fitxa_C.RD.31.13.html">
+<div class="grid"><a class="card" data-amb="C" data-txt="13 contra l&#x27;exclusió residencial c.rd.31.13" href="fitxa_C.RD.31.13.html">
 <div class="ch"><span class="num" style="background:#EF6F4C">13</span>
 <div><span class="cbadge" style="color:#EF6F4C">C.RD.31.13</span><div class="cn">Contra l&#x27;exclusió residencial</div></div></div>
 <div id="m12" class="mini"></div>
 <div class="cf"><div class="row"><span style="color:#EF6F4C;font-weight:700">Acció sociocomunitària</span><span class="bud">249.800 €</span></div>
-<div class="empl">Tot el barri. Oficines a Edifici Molí i Oficines de Serveis Socials del C. Cedres</div><div class="cta">Veure fitxa completa →</div></div></a><a class="card" href="fitxa_C.RD.32.14.html">
+<div class="empl">Tot el barri. Oficines a Edifici Molí i Oficines de Serveis Socials del C. Cedres</div><div class="cta">Veure fitxa completa →</div></div></a><a class="card" data-amb="C" data-txt="14 convivència i enxarxament c.rd.32.14" href="fitxa_C.RD.32.14.html">
 <div class="ch"><span class="num" style="background:#EF6F4C">14</span>
 <div><span class="cbadge" style="color:#EF6F4C">C.RD.32.14</span><div class="cn">Convivència i enxarxament</div></div></div>
 <div id="m13" class="mini"></div>
 <div class="cf"><div class="row"><span style="color:#EF6F4C;font-weight:700">Acció sociocomunitària</span><span class="bud">259.394 €</span></div>
-<div class="empl">Tot el barri. Edifici Molí, Edifici Cadí i CSE Can Vidalet</div><div class="cta">Veure fitxa completa →</div></div></a><a class="card" href="fitxa_C.RD.35.15.html">
+<div class="empl">Tot el barri. Edifici Molí, Edifici Cadí i CSE Can Vidalet</div><div class="cta">Veure fitxa completa →</div></div></a><a class="card" data-amb="C" data-txt="15 suport a comunitats veïnals c.rd.35.15" href="fitxa_C.RD.35.15.html">
 <div class="ch"><span class="num" style="background:#EF6F4C">15</span>
 <div><span class="cbadge" style="color:#EF6F4C">C.RD.35.15</span><div class="cn">Suport a comunitats veïnals</div></div></div>
 <div id="m14" class="mini"></div>
 <div class="cf"><div class="row"><span style="color:#EF6F4C;font-weight:700">Acció sociocomunitària</span><span class="bud">597.421 €</span></div>
-<div class="empl">Comunitats de veïns. Edifici Cadí</div><div class="cta">Veure fitxa completa →</div></div></a><a class="card" href="fitxa_C.EG.36.16.html">
+<div class="empl">Comunitats de veïns. Edifici Cadí</div><div class="cta">Veure fitxa completa →</div></div></a><a class="card" data-amb="C" data-txt="16 temps x tu (acollida d&#x27;infants) c.eg.36.16" href="fitxa_C.EG.36.16.html">
 <div class="ch"><span class="num" style="background:#EF6F4C">16</span>
 <div><span class="cbadge" style="color:#EF6F4C">C.EG.36.16</span><div class="cn">Temps x Tu (acollida d&#x27;infants)</div></div></div>
 <div id="m15" class="mini"></div>
 <div class="cf"><div class="row"><span style="color:#EF6F4C;font-weight:700">Acció sociocomunitària</span><span class="bud">140.200 €</span></div>
-<div class="empl">Club Esplai Pubilla Casas</div><div class="cta">Veure fitxa completa →</div></div></a><a class="card" href="fitxa_C.EG.38.17.html">
+<div class="empl">Club Esplai Pubilla Casas</div><div class="cta">Veure fitxa completa →</div></div></a><a class="card" data-amb="C" data-txt="17 prevenció del discurs d&#x27;odi c.eg.38.17" href="fitxa_C.EG.38.17.html">
 <div class="ch"><span class="num" style="background:#EF6F4C">17</span>
 <div><span class="cbadge" style="color:#EF6F4C">C.EG.38.17</span><div class="cn">Prevenció del discurs d&#x27;odi</div></div></div>
 <div id="m16" class="mini"></div>
 <div class="cf"><div class="row"><span style="color:#EF6F4C;font-weight:700">Acció sociocomunitària</span><span class="bud">95.000 €</span></div>
-<div class="empl">Tot el barri. Espais de treball i activitat: Espai Juvenil Remolí, escoles del barri i institut</div><div class="cta">Veure fitxa completa →</div></div></a><a class="card" href="fitxa_C.SE.41.18.html">
+<div class="empl">Tot el barri. Espais de treball i activitat: Espai Juvenil Remolí, escoles del barri i institut</div><div class="cta">Veure fitxa completa →</div></div></a><a class="card" data-amb="C" data-txt="18 salut comunitària c.se.41.18" href="fitxa_C.SE.41.18.html">
 <div class="ch"><span class="num" style="background:#EF6F4C">18</span>
 <div><span class="cbadge" style="color:#EF6F4C">C.SE.41.18</span><div class="cn">Salut comunitària</div></div></div>
 <div id="m17" class="mini"></div>
 <div class="cf"><div class="row"><span style="color:#EF6F4C;font-weight:700">Acció sociocomunitària</span><span class="bud">96.110 €</span></div>
-<div class="empl">Entorn del CSE: Parc de Can Vidalet, plaça Blas Infante, CAP Can Vidalet, Espai Remolí, Edifici Cadí i Edifici Molí</div><div class="cta">Veure fitxa completa →</div></div></a><a class="card" href="fitxa_C.SE.42.19.html">
+<div class="empl">Entorn del CSE: Parc de Can Vidalet, plaça Blas Infante, CAP Can Vidalet, Espai Remolí, Edifici Cadí i Edifici Molí</div><div class="cta">Veure fitxa completa →</div></div></a><a class="card" data-amb="C" data-txt="19 contra la soledat de la gent gran c.se.42.19" href="fitxa_C.SE.42.19.html">
 <div class="ch"><span class="num" style="background:#EF6F4C">19</span>
 <div><span class="cbadge" style="color:#EF6F4C">C.SE.42.19</span><div class="cn">Contra la soledat de la gent gran</div></div></div>
 <div id="m18" class="mini"></div>
 <div class="cf"><div class="row"><span style="color:#EF6F4C;font-weight:700">Acció sociocomunitària</span><span class="bud">251.350 €</span></div>
-<div class="empl">Tot el barri. Espais de treball i activitat: Serveis Socials (c. Cedres), CSE Can Vidalet, Edifici Cadí, Espai Remolí i Institut</div><div class="cta">Veure fitxa completa →</div></div></a><a class="card" href="fitxa_C.SE.44.20.html">
+<div class="empl">Tot el barri. Espais de treball i activitat: Serveis Socials (c. Cedres), CSE Can Vidalet, Edifici Cadí, Espai Remolí i Institut</div><div class="cta">Veure fitxa completa →</div></div></a><a class="card" data-amb="C" data-txt="20 activa&#x27;t al barri c.se.44.20" href="fitxa_C.SE.44.20.html">
 <div class="ch"><span class="num" style="background:#EF6F4C">20</span>
 <div><span class="cbadge" style="color:#EF6F4C">C.SE.44.20</span><div class="cn">Activa&#x27;t al barri</div></div></div>
 <div id="m19" class="mini"></div>
 <div class="cf"><div class="row"><span style="color:#EF6F4C;font-weight:700">Acció sociocomunitària</span><span class="bud">218.300 €</span></div>
-<div class="empl">Entorn esportiu: Parc de Can Vidalet, plaça Blas Infante, CSE Can Vidalet, CAP Can Vidalet, Espai Remolí, Edifici Cadí, Edifici Molí i camp de futbol</div><div class="cta">Veure fitxa completa →</div></div></a><a class="card" href="fitxa_C.ED.47.21.html">
+<div class="empl">Entorn esportiu: Parc de Can Vidalet, plaça Blas Infante, CSE Can Vidalet, CAP Can Vidalet, Espai Remolí, Edifici Cadí, Edifici Molí i camp de futbol</div><div class="cta">Veure fitxa completa →</div></div></a><a class="card" data-amb="C" data-txt="21 educació comunitària c.ed.47.21" href="fitxa_C.ED.47.21.html">
 <div class="ch"><span class="num" style="background:#EF6F4C">21</span>
 <div><span class="cbadge" style="color:#EF6F4C">C.ED.47.21</span><div class="cn">Educació comunitària</div></div></div>
 <div id="m20" class="mini"></div>
 <div class="cf"><div class="row"><span style="color:#EF6F4C;font-weight:700">Acció sociocomunitària</span><span class="bud">599.866 €</span></div>
-<div class="empl">Entorn de les escoles i l&#x27;institut: Escola d&#x27;adults, Escola Oficial d&#x27;Idiomes, Serveis Educatius de la Generalitat, CSE Can Vidalet i Espai Remolí</div><div class="cta">Veure fitxa completa →</div></div></a><a class="card" href="fitxa_C.ED.47.22.html">
+<div class="empl">Entorn de les escoles i l&#x27;institut: Escola d&#x27;adults, Escola Oficial d&#x27;Idiomes, Serveis Educatius de la Generalitat, CSE Can Vidalet i Espai Remolí</div><div class="cta">Veure fitxa completa →</div></div></a><a class="card" data-amb="C" data-txt="22 noves oportunitats educatives c.ed.47.22" href="fitxa_C.ED.47.22.html">
 <div class="ch"><span class="num" style="background:#EF6F4C">22</span>
 <div><span class="cbadge" style="color:#EF6F4C">C.ED.47.22</span><div class="cn">Noves oportunitats educatives</div></div></div>
 <div id="m21" class="mini"></div>
 <div class="cf"><div class="row"><span style="color:#EF6F4C;font-weight:700">Acció sociocomunitària</span><span class="bud">275.056 €</span></div>
-<div class="empl">Entorn de les escoles i l&#x27;institut: Escola d&#x27;adults, Escola Oficial d&#x27;Idiomes, Serveis Educatius de la Generalitat, CSE Can Vidalet i Espai Remolí (quan es construeixi, s&#x27;ubicarà al HUB del Benestar)</div><div class="cta">Veure fitxa completa →</div></div></a><a class="card" href="fitxa_C.ET.51.23.html">
+<div class="empl">Entorn de les escoles i l&#x27;institut: Escola d&#x27;adults, Escola Oficial d&#x27;Idiomes, Serveis Educatius de la Generalitat, CSE Can Vidalet i Espai Remolí (quan es construeixi, s&#x27;ubicarà al HUB del Benestar)</div><div class="cta">Veure fitxa completa →</div></div></a><a class="card" data-amb="C" data-txt="23 recapacita&#x27;t (capacitació i ocupació) c.et.51.23" href="fitxa_C.ET.51.23.html">
 <div class="ch"><span class="num" style="background:#EF6F4C">23</span>
 <div><span class="cbadge" style="color:#EF6F4C">C.ET.51.23</span><div class="cn">Recapacita&#x27;t (capacitació i ocupació)</div></div></div>
 <div id="m22" class="mini"></div>
 <div class="cf"><div class="row"><span style="color:#EF6F4C;font-weight:700">Acció sociocomunitària</span><span class="bud">70.000 €</span></div>
 <div class="empl">Aules i equipaments: Servei d&#x27;Ocupació (edifici Molí); ubicació al HUB del Benestar un cop construït</div><div class="cta">Veure fitxa completa →</div></div></a></div>
+<div class="nores" id="nores">No hi ha cap actuació que coincideixi amb la cerca.</div>
 <footer>Base cartogràfica © OpenStreetMap · © CARTO · Delimitació © Idescat · Localitzacions verificades i situades dins l'AAE de Can Vidalet.</footer>
 <script>
 const T='https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png';
@@ -158,6 +167,14 @@ function mk(i,pts,col,num){
  if(pts.length>1){m.fitBounds(pts,{padding:[36,36],maxZoom:17});}else{m.setView(pts[0],17);}
  setTimeout(()=>m.invalidateSize(),150);
 }
+const active={A:true,B:true,C:true};
+document.querySelectorAll('.fchip').forEach(ch=>ch.onclick=()=>{const a=ch.dataset.a;active[a]=!active[a];ch.classList.toggle('off',!active[a]);flt();});
+function flt(){const q=(document.getElementById('q').value||'').trim().toLowerCase();let n=0;
+ document.querySelectorAll('.card').forEach(c=>{const okA=active[c.dataset.amb];const okQ=!q||(c.dataset.txt||'').includes(q);const sh=okA&&okQ;c.style.display=sh?'':'none';if(sh)n++;});
+ document.querySelectorAll('.sec').forEach(s=>{const g=s.nextElementSibling;const any=g&&[...g.querySelectorAll('.card')].some(c=>c.style.display!=='none');s.style.display=any?'':'none';if(g)g.style.display=any?'':'none';});
+ const nr=document.getElementById('nores');if(nr)nr.style.display=n?'none':'';
+}
+const _q=document.getElementById('q');if(_q)_q.oninput=flt; flt();
 
 mk(0,[[41.3749, 2.0969]],'#1F8A60',1);
 mk(1,[[41.37404, 2.10089], [41.37255, 2.09689]],'#1F8A60',2);
