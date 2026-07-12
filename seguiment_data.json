@@ -652,7 +652,7 @@
   {
    "num": 9,
    "codi": "B.CC.18.9",
-   "nom": "Patis escolars oberts",
+   "nom": "Naturalització de patis escolars",
    "ambit": "B",
    "ambit_nom": "Àmbit B · Transició ecològica",
    "sub": "Emergència climàtica",
@@ -1189,8 +1189,8 @@
    "co2": "−1,9 t/any",
    "points": [
     [
-     41.37073,
-     2.09952
+     41.37293,
+     2.10103
     ]
    ],
    "estat": "no_iniciada",

@@ -1,5 +1,5 @@
 <!DOCTYPE html><html lang="ca"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>B.CC.18.9 · Patis escolars oberts — Fitxa PMII Can Vidalet</title>
+<title>B.CC.18.9 · Naturalització de patis escolars — Fitxa PMII Can Vidalet</title>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <style>
@@ -55,7 +55,7 @@ td.r,th.r{text-align:right} tr:nth-child(even) td{background:rgba(31,138,96,.05)
 <div class="top"><div class="wrap">
 <a class="back" href="index.html">← Torna al mapa global de les 23 actuacions</a>
 <div class="head"><div class="num">9</div><div>
-<span class="badge">B.CC.18.9</span><h1>Patis escolars oberts</h1>
+<span class="badge">B.CC.18.9</span><h1>Naturalització de patis escolars</h1>
 <div class="amb">Àmbit B · Transició ecològica · Emergència climàtica · Abast de barri</div></div></div>
 </div></div>
 <div class="wrap">
@@ -79,7 +79,7 @@ td.r,th.r{text-align:right} tr:nth-child(even) td{background:rgba(31,138,96,.05)
 <div class="actrl"><button id="aplay">▶ Escolta</button><button id="astop">■ Atura</button><span class="arate">Velocitat <input type="range" id="arate" min="0.7" max="1.2" step="0.05" value="0.98"></span></div>
 <div class="awarn" id="awarn"></div></div>
 <div class="card"><h2>Descripció i abast territorial</h2>
-<p class="lead">Actuació emmarcada en l'Àmbit B · Transició ecològica, dins la línia temàtica d'Emergència climàtica. Patis escolars oberts. Se situa a: Patis de les 3 escoles públiques.</p>
+<p class="lead">Actuació emmarcada en l'Àmbit B · Transició ecològica, dins la línia temàtica d'Emergència climàtica. Naturalització de patis escolars. Se situa a: Patis de les 3 escoles públiques.</p>
 <div style="margin-top:12px"><span class="pill">Àmbit temàtic: Emergència climàtica</span> <span class="pill">Localització: Patis de les 3 escoles públiques</span> <span class="pill">Tipus: Abast de barri</span></div></div>
 <div class="card"><h2>Finançament (model 60/40)</h2>
 <div class="fin"><div class="g" style="flex:60">Generalitat · 60% · 540.000 €</div><div class="m" style="flex:40">Ajuntament · 40% · 360.000 €</div></div></div>
@@ -99,7 +99,7 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',{ma
 const ic=L.divIcon({className:'',html:'<div class="pin" style="background:'+col+';width:34px;height:34px;font-size:16px">'+num+'</div>',iconSize:[34,34],iconAnchor:[17,17]});
 pts.forEach(p=>L.marker(p,{icon:ic}).addTo(m));
 if(pts.length>1){m.fitBounds(pts,{padding:[50,50],maxZoom:17});}else{m.setView(pts[0],17);}
-const ATX={"ca": "Actuació 9. Patis escolars oberts. Una actuació de l'àmbit de transició ecològica del Pla de Barris de Can Vidalet. Se situa a Patis de les 3 escoles públiques. Inversió prevista: 900 mil euros. S'estima que evita unes 6,0 tones de CO₂ a l'any (en conjunt amb les altres actuacions de verd nou).", "es": "Actuación 9. Patis escolars oberts. Una actuación del ámbito de transición ecológica del Plan de Barrios de Can Vidalet. Se sitúa en Patis de les 3 escoles públiques. Inversión prevista: 900 mil euros. Se estima que evita unas 6,0 toneladas de CO₂ al año (en conjunto con las demás actuaciones de verde nuevo).", "en": "Action 9. Patis escolars oberts. An action within the ecological transition area of the Can Vidalet Neighbourhood Plan. It is located at Patis de les 3 escoles públiques. Planned investment: 900 thousand euros. It is estimated to avoid around 6.0 tonnes of CO₂ per year (together with the other new-greenery actions)."};
+const ATX={"ca": "Actuació 9. Naturalització de patis escolars. Una actuació de l'àmbit de transició ecològica del Pla de Barris de Can Vidalet. Se situa a Patis de les 3 escoles públiques. Inversió prevista: 900 mil euros. S'estima que evita unes 6,0 tones de CO₂ a l'any (en conjunt amb les altres actuacions de verd nou).", "es": "Actuación 9. Naturalització de patis escolars. Una actuación del ámbito de transición ecológica del Plan de Barrios de Can Vidalet. Se sitúa en Patis de les 3 escoles públiques. Inversión prevista: 900 mil euros. Se estima que evita unas 6,0 toneladas de CO₂ al año (en conjunto con las demás actuaciones de verde nuevo).", "en": "Action 9. Naturalització de patis escolars. An action within the ecological transition area of the Can Vidalet Neighbourhood Plan. It is located at Patis de les 3 escoles públiques. Planned investment: 900 thousand euros. It is estimated to avoid around 6.0 tonnes of CO₂ per year (together with the other new-greenery actions)."};
 const ALG={ca:'ca-ES',es:'es-ES',en:'en-GB'}; let acur='ca'; let avoices=[];
 function anorm(l){return (l||'').replace('_','-').toLowerCase();}
 function apick(lang){const base=lang.split('-')[0];
