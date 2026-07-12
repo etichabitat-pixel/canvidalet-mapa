@@ -52,6 +52,19 @@ td.r,th.r{text-align:right} tr:nth-child(even) td{background:rgba(31,138,96,.05)
 <div class="kpi"><div class="l">Aportació municipal</div><div class="v">103.758 €</div></div>
 <div class="kpi"><div class="l">Naturalesa</div><div class="v">Corrent</div></div>
 </div>
+<div class="card"><h2>Escolta l'actuació</h2>
+<style>
+.alangs{display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap}
+.alang{cursor:pointer;font-weight:700;font-size:13px;padding:7px 14px;border-radius:30px;border:1.5px solid #d7d1c4;background:#fff;color:#1E2A3A}
+.alang.on{background:#1E2A3A;color:#fff;border-color:#1E2A3A}
+.actrl{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+#aplay{background:var(--amb);color:#fff;border:none;font-weight:700;font-size:15px;padding:11px 20px;border-radius:30px;cursor:pointer}
+#astop{background:#fff;border:1.5px solid #d7d1c4;font-weight:600;padding:10px 16px;border-radius:30px;cursor:pointer}
+.arate{font-size:13px;color:#41506a}.awarn{font-size:12px;color:var(--gris);margin-top:10px}
+</style>
+<div class="alangs"><span class="alang on" data-l="ca">Català</span><span class="alang" data-l="es">Castellà</span><span class="alang" data-l="en">English</span></div>
+<div class="actrl"><button id="aplay">▶ Escolta</button><button id="astop">■ Atura</button><span class="arate">Velocitat <input type="range" id="arate" min="0.7" max="1.2" step="0.05" value="0.98"></span></div>
+<div class="awarn" id="awarn"></div></div>
 <div class="card"><h2>Descripció i abast territorial</h2>
 <p class="lead">Actuació emmarcada en l'Àmbit C · Acció sociocomunitària, dins la línia temàtica de Convivència i reducció de les desigualtats. Convivència i enxarxament. Se situa a: Tot el barri. Edifici Molí, Edifici Cadí i CSE Can Vidalet.</p>
 <div style="margin-top:12px"><span class="pill">Àmbit temàtic: Convivència i reducció de les desigualtats</span> <span class="pill">Localització: Tot el barri. Edifici Molí, Edifici Cadí i CSE Can Vidalet</span> <span class="pill">Tipus: Abast de barri</span></div></div>
@@ -73,4 +86,21 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',{ma
 const ic=L.divIcon({className:'',html:'<div class="pin" style="background:'+col+';width:34px;height:34px;font-size:16px">'+num+'</div>',iconSize:[34,34],iconAnchor:[17,17]});
 pts.forEach(p=>L.marker(p,{icon:ic}).addTo(m));
 if(pts.length>1){m.fitBounds(pts,{padding:[50,50],maxZoom:17});}else{m.setView(pts[0],17);}
+const ATX={"ca": "Actuació 14. Convivència i enxarxament. Una actuació de l'àmbit de acció sociocomunitària del Pla de Barris de Can Vidalet. És una actuació d'abast de barri, amb activitat a diversos equipaments. Inversió prevista: 259 mil euros. S'estima que evita unes 1,9 tones de CO₂ a l'any.", "es": "Actuación 14. Convivència i enxarxament. Una actuación del ámbito de acción sociocomunitaria del Plan de Barrios de Can Vidalet. Es una actuación de alcance de barrio, con actividad en varios equipamientos. Inversión prevista: 259 mil euros. Se estima que evita unas 1,9 toneladas de CO₂ al año.", "en": "Action 14. Convivència i enxarxament. An action within the community action area of the Can Vidalet Neighbourhood Plan. It is a neighbourhood-wide action, active across several facilities. Planned investment: 259 thousand euros. It is estimated to avoid around 1.9 tonnes of CO₂ per year."};
+const ALG={ca:'ca-ES',es:'es-ES',en:'en-GB'}; let acur='ca'; let avoices=[];
+function anorm(l){return (l||'').replace('_','-').toLowerCase();}
+function apick(lang){const base=lang.split('-')[0];
+ let v=avoices.find(x=>anorm(x.lang)===lang.toLowerCase()); if(v)return v;
+ if(base==='es'){for(const n of ['Mónica','Monica','Marisol','Jorge','Elvira','Sergio']){const vv=avoices.find(x=>anorm(x.lang).startsWith('es-es')&&x.name.includes(n));if(vv)return vv;}return avoices.find(x=>anorm(x.lang).startsWith('es-es'))||null;}
+ if(base==='ca')return avoices.find(x=>anorm(x.lang).startsWith('ca')||/catal/i.test(x.name))||null;
+ if(base==='en')return avoices.find(x=>anorm(x.lang)==='en-gb')||avoices.find(x=>anorm(x.lang).startsWith('en'))||null;
+ return null;}
+function aload(){avoices=speechSynthesis.getVoices();awarnf();}
+speechSynthesis.onvoiceschanged=aload;aload();
+function awarnf(){const v=apick(ALG[acur]);const nm={ca:'catalana',es:"castellana d'Espanya",en:'anglesa'};document.getElementById('awarn').textContent=v?('Veu '+nm[acur]+': '+v.name):('No hi ha veu '+nm[acur]+" al dispositiu; s'ha d'afegir des dels ajustos del sistema.");}
+document.querySelectorAll('.alang').forEach(e=>e.onclick=()=>{acur=e.dataset.l;document.querySelectorAll('.alang').forEach(x=>x.classList.toggle('on',x.dataset.l===acur));speechSynthesis.cancel();awarnf();});
+document.getElementById('aplay').onclick=()=>{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(ATX[acur]);u.lang=ALG[acur];const v=apick(ALG[acur]);if(v)u.voice=v;u.rate=parseFloat(document.getElementById('arate').value);speechSynthesis.speak(u);};
+document.getElementById('astop').onclick=()=>speechSynthesis.cancel();
+awarnf();
+
 </script></body></html>
