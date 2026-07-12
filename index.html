@@ -24,7 +24,14 @@ html,body{height:100%;font-family:Inter,Arial,sans-serif;color:var(--grafit)}
 .chip{cursor:pointer;user-select:none;font-size:12px;font-weight:700;padding:6px 11px;border-radius:20px;color:#fff;opacity:1;transition:.15s}
 .chip.A{background:var(--verd)} .chip.B{background:var(--blau)} .chip.C{background:var(--coral)}
 .chip.off{opacity:.32}
-.hint{font-size:11px;color:var(--gris);margin-top:12px;line-height:1.4}
+.hint{font-size:11px;color:var(--gris);margin-top:10px;line-height:1.4}
+.search{width:100%;padding:8px 10px;border:1px solid #e0dac9;border-radius:8px;font-size:13px;margin:10px 0 6px;font-family:inherit}
+.list{max-height:40vh;overflow-y:auto;margin:0 -6px;padding-right:4px}
+.ghead{font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;margin:8px 6px 2px}
+.item{display:flex;gap:9px;align-items:center;padding:6px 6px;border-radius:8px;cursor:pointer}
+.item:hover{background:var(--sorra)}
+.idot{width:23px;height:23px;border-radius:50%;color:#fff;font-family:'Bricolage Grotesque';font-weight:800;font-size:11px;display:flex;align-items:center;justify-content:center;flex:none}
+.iname{font-size:12.5px;line-height:1.18} .icode{font-size:10px;color:var(--gris)}
 /* markers */
 .pin{color:#fff;font-family:'Bricolage Grotesque';font-weight:800;border:2px solid #fff;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(30,42,58,.45);transition:transform .12s}
 .pin:hover{transform:scale(1.18)}
@@ -57,7 +64,9 @@ html,body{height:100%;font-family:Inter,Arial,sans-serif;color:var(--grafit)}
   <div class="kpis"><div class="kpi"><div class="v">23</div><div class="l">actuacions</div></div><div class="kpi"><div class="v">24,99 M€</div><div class="l">inversió</div></div><div class="kpi"><div class="v">3</div><div class="l">àmbits</div></div></div>
   <div class="flab">Filtra per àmbit</div>
   <div class="chips"><span class="chip A" data-a="A">Àmbit A</span><span class="chip B" data-a="B">Àmbit B</span><span class="chip C" data-a="C">Àmbit C</span></div>
-  <div class="hint">Clica un punt per veure el detall i obrir la fitxa completa de l'actuació. Les actuacions d'abast de barri es mostren amb tots els seus punts.</div>
+  <div class="hint">Clica un punt o un element de la llista per veure'n el detall i obrir la fitxa.</div>
+  <input id="q" class="search" placeholder="Cerca una actuació per nom o codi…">
+  <div class="list" id="list"></div>
  </div>
 </div>
 <div class="drawer" id="drawer">
@@ -124,6 +133,29 @@ document.getElementById('dstop').onclick=()=>speechSynthesis.cancel();
 const active={A:true,B:true,C:true};
 document.querySelectorAll('.chip').forEach(ch=>{
  ch.onclick=()=>{const a=ch.dataset.a; active[a]=!active[a]; ch.classList.toggle('off',!active[a]);
-  DATA.forEach(d=>{if(d.ambit===a){markers[d.num].forEach(m=>{if(active[a])m.addTo(map);else map.removeLayer(m);});}});};
+  DATA.forEach(d=>{if(d.ambit===a){markers[d.num].forEach(m=>{if(active[a])m.addTo(map);else map.removeLayer(m);});}});
+  applyFilter();};
 });
+/* --- llista de les 23 + cercador --- */
+const AMBNOM={A:'Àmbit A · Transformacions físiques',B:'Àmbit B · Transició ecològica',C:'Àmbit C · Acció sociocomunitària'};
+const listEl=document.getElementById('list');
+['A','B','C'].forEach(amb=>{
+ const h=document.createElement('div'); h.className='ghead'; h.dataset.amb=amb; h.style.color=COL[amb]; h.textContent=AMBNOM[amb]; listEl.appendChild(h);
+ DATA.filter(d=>d.ambit===amb).forEach(d=>{
+  const it=document.createElement('div'); it.className='item'; it.dataset.amb=amb; it.dataset.txt=(d.num+' '+d.nom+' '+d.codi).toLowerCase();
+  it.innerHTML='<span class="idot" style="background:'+COL[amb]+'">'+d.num+'</span><div><div class="iname">'+d.nom+'</div><div class="icode">'+d.codi+'</div></div>';
+  it.onclick=()=>openD(d); listEl.appendChild(it);
+ });
+});
+function applyFilter(){
+ const q=(document.getElementById('q').value||'').trim().toLowerCase();
+ const vis={A:0,B:0,C:0};
+ document.querySelectorAll('.item').forEach(it=>{
+  const okA=active[it.dataset.amb]; const okQ=!q||it.dataset.txt.includes(q);
+  const show=okA&&okQ; it.style.display=show?'':'none'; if(show)vis[it.dataset.amb]++;
+ });
+ document.querySelectorAll('.ghead').forEach(h=>{h.style.display=vis[h.dataset.amb]?'':'none';});
+}
+document.getElementById('q').oninput=applyFilter;
+applyFilter();
 </script></body></html>
