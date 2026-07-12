@@ -31,7 +31,17 @@ footer{max-width:1180px;margin:8px auto 30px;padding:10px 22px;color:#7C8493;fon
 .fchip.A{background:#1F8A60}.fchip.B{background:#2B7FC4}.fchip.C{background:#EF6F4C}
 .fchip.off{opacity:.32}
 .nores{max-width:1180px;margin:20px auto;padding:0 22px;color:#7C8493;display:none}
+.topnav{position:fixed;top:0;left:0;right:0;height:46px;background:#161f2b;display:flex;align-items:center;gap:16px;padding:0 18px;z-index:3000;box-shadow:0 2px 10px rgba(0,0,0,.25)}
+.topnav .tnb{color:#fff;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:14px;white-space:nowrap}
+.topnav .tnb b{color:#F4C84A}
+.topnav nav{display:flex;gap:5px;flex-wrap:wrap}
+.topnav a{color:#C7CFDA;text-decoration:none;font-size:12.5px;font-weight:600;padding:6px 11px;border-radius:20px}
+.topnav a:hover{background:rgba(255,255,255,.12);color:#fff}
+.topnav a.on{background:#1F8A60;color:#fff}
+.navspace{height:46px}
+@media(max-width:640px){.topnav .tnb{display:none}.topnav{gap:6px;padding:0 8px}.topnav a{padding:6px 8px;font-size:11.5px}}
 </style></head><body>
+<div class="topnav"><span class="tnb"><b>+</b> Can Vidalet</span><nav><a href="Seguiment_Public_CanVidalet.html">Seguiment</a><a href="index.html">Mapa general</a><a href="Mapa_Individual_Actuacions_CanVidalet.html" class="on">Individual</a><a href="Fitxes_Cartografiques_Actuacions_CanVidalet.html">Cartogràfic</a></nav></div><div class="navspace"></div>
 <header><div class="plus">+</div><h1>Can Vidalet · Mapes individuals de les 23 actuacions</h1><p>Pla de Barris i Viles 2026 · Ajuntament d&#x27;Esplugues de Llobregat · clica una actuació per obrir la seva fitxa</p></header>
 <div class="filterbar"><input class="fsearch" id="q" placeholder="Cerca una actuació per nom o codi…" autocomplete="off"><div class="fchips"><span class="fchip A" data-a="A">Àmbit A</span><span class="fchip B" data-a="B">Àmbit B</span><span class="fchip C" data-a="C">Àmbit C</span></div></div>
 <div class="grid"><a class="card" data-amb="A" data-txt="1 hub del benestar a.ur.3.1" href="fitxa_A.UR.3.1.html">

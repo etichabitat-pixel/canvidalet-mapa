@@ -7,8 +7,16 @@
 :root{--verd:#1F8A60;--verdf:#15694A;--blau:#2B7FC4;--coral:#EF6F4C;--grafit:#1E2A3A;--sorra:#F6F1E7;--groc:#F4C84A;--gris:#7C8493}
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{height:100%;font-family:Inter,Arial,sans-serif;color:var(--grafit)}
-#map{position:absolute;inset:0;background:#eaeaea}
-.panel{position:absolute;top:16px;left:16px;z-index:1000;width:310px;max-width:calc(100% - 32px);background:rgba(255,255,255,.97);backdrop-filter:blur(6px);border-radius:16px;box-shadow:0 18px 44px -20px rgba(30,42,58,.5);overflow:hidden}
+#map{position:absolute;top:46px;left:0;right:0;bottom:0;background:#eaeaea}
+.topnav{position:fixed;top:0;left:0;right:0;height:46px;background:#161f2b;display:flex;align-items:center;gap:16px;padding:0 18px;z-index:3000;box-shadow:0 2px 10px rgba(0,0,0,.25)}
+.topnav .tnb{color:#fff;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:14px;white-space:nowrap}
+.topnav .tnb b{color:#F4C84A}
+.topnav nav{display:flex;gap:5px;flex-wrap:wrap}
+.topnav a{color:#C7CFDA;text-decoration:none;font-size:12.5px;font-weight:600;padding:6px 11px;border-radius:20px}
+.topnav a:hover{background:rgba(255,255,255,.12);color:#fff}
+.topnav a.on{background:#1F8A60;color:#fff}
+@media(max-width:640px){.topnav .tnb{display:none}.topnav{gap:6px;padding:0 8px}.topnav a{padding:6px 8px;font-size:11.5px}}
+.panel{position:absolute;top:62px;left:16px;z-index:1000;width:310px;max-width:calc(100% - 32px);background:rgba(255,255,255,.97);backdrop-filter:blur(6px);border-radius:16px;box-shadow:0 18px 44px -20px rgba(30,42,58,.5);overflow:hidden}
 .panel .hd{background:var(--grafit);color:#fff;padding:16px 18px}
 .panel .hd .plus{color:var(--groc);font-family:'Bricolage Grotesque';font-weight:800;font-size:18px;line-height:1}
 .panel .hd h1{font-family:'Bricolage Grotesque';font-weight:800;font-size:18px;margin:6px 0 2px}
@@ -36,7 +44,7 @@ html,body{height:100%;font-family:Inter,Arial,sans-serif;color:var(--grafit)}
 .pin{color:#fff;font-family:'Bricolage Grotesque';font-weight:800;border:2px solid #fff;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(30,42,58,.45);transition:transform .12s}
 .pin:hover{transform:scale(1.18)}
 /* detail drawer */
-.drawer{position:absolute;top:0;right:0;height:100%;width:360px;max-width:88%;z-index:1200;background:#fff;box-shadow:-14px 0 40px -18px rgba(30,42,58,.5);transform:translateX(100%);transition:transform .28s ease}
+.drawer{position:absolute;top:46px;right:0;height:calc(100% - 46px);width:360px;max-width:88%;z-index:1200;background:#fff;box-shadow:-14px 0 40px -18px rgba(30,42,58,.5);transform:translateX(100%);transition:transform .28s ease}
 .drawer.open{transform:translateX(0)}
 .drawer .dh{color:#fff;padding:20px 20px 16px;position:relative}
 .drawer .dnum{width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.22);display:flex;align-items:center;justify-content:center;font-family:'Bricolage Grotesque';font-weight:800;font-size:20px;color:#fff}
@@ -59,6 +67,12 @@ html,body{height:100%;font-family:Inter,Arial,sans-serif;color:var(--grafit)}
 .attrib{position:absolute;bottom:6px;right:8px;z-index:1000;font-size:10px;color:#66707d;background:rgba(255,255,255,.7);padding:2px 6px;border-radius:5px}
 @media(max-width:640px){.panel{width:calc(100% - 32px)} .kpi .v{font-size:14px}}
 </style></head><body>
+<div class="topnav"><span class="tnb"><b>+</b> Can Vidalet</span><nav>
+<a href="Seguiment_Public_CanVidalet.html">Seguiment</a>
+<a href="index.html" class="on">Mapa general</a>
+<a href="Mapa_Individual_Actuacions_CanVidalet.html">Individual</a>
+<a href="Fitxes_Cartografiques_Actuacions_CanVidalet.html">Cartogràfic</a>
+</nav></div>
 <div id="map"></div>
 <div class="panel">
  <div class="hd"><div class="plus">+</div><h1>Can Vidalet · Construïm benestar</h1><p>Les 23 actuacions del PMII · Pla de Barris i Viles 2026</p></div>
