@@ -4,7 +4,7 @@
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Fraunces:ital@0;1&family=Inter:wght@400;500;600;700&display=swap');
-:root{--verd:#1F8A60;--verdf:#15694A;--blau:#2B7FC4;--coral:#EF6F4C;--grafit:#1E2A3A;--sorra:#F6F1E7;--groc:#F4C84A;--gris:#7C8493;--amb:#1F8A60}
+:root{--verd:#1F8A60;--verdf:#15694A;--blau:#2B7FC4;--coral:#EF6F4C;--grafit:#1E2A3A;--sorra:#F6F1E7;--groc:#F4C84A;--gris:#7C8493;--amb:#2B7FC4}
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:Inter,Arial,sans-serif;color:var(--grafit);background:var(--sorra);line-height:1.55}
 .wrap{max-width:900px;margin:0 auto;padding:0 18px 60px}
@@ -93,7 +93,7 @@ td.r,th.r{text-align:right} tr:nth-child(even) td{background:rgba(31,138,96,.05)
 <div class="foot">PMII Can Vidalet · Construïm benestar · Pla de Barris i Viles 2026 · Ajuntament d'Esplugues de Llobregat<br>Base © OpenStreetMap · © CARTO · localitzacions verificades dins l'AAE</div>
 </div>
 <script>
-const pts=[[41.37196, 2.09629], [41.37592, 2.09997], [41.37302, 2.09911]]; const col='#1F8A60'; const num=4;
+const pts=[[41.37196, 2.09629], [41.37592, 2.09997], [41.37302, 2.09911]]; const col='#2B7FC4'; const num=4;
 const m=L.map('map',{scrollWheelZoom:false});
 L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',{maxZoom:20,subdomains:'abcd',attribution:'© OpenStreetMap · © CARTO'}).addTo(m);
 const ic=L.divIcon({className:'',html:'<div class="pin" style="background:'+col+';width:34px;height:34px;font-size:16px">'+num+'</div>',iconSize:[34,34],iconAnchor:[17,17]});
